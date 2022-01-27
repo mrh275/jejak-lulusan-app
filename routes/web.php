@@ -15,5 +15,6 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', [HomeController::class, 'index']);
-
 Route::get('/daftar-lulusan', [HomeController::class, 'daftarLulusan']);
+Route::get('/pengumuman-kelulusan', [HomeController::class, 'pengumuman']);
+Route::get('/login', [HomeController::class, 'login']);

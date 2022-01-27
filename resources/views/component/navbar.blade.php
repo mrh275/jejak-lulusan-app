@@ -23,10 +23,10 @@
                 <a href="/daftar-lulusan" class="nav-link">Daftar Lulusan</a>
             </li>
             <li class="nav-list">
-                <a href="/pengumuman-kelulusan.html" class="nav-link">Pengumuman</a>
+                <a href="/pengumuman-kelulusan" class="nav-link">Pengumuman</a>
             </li>
             <li class="nav-list">
-                <a href="/login.html" class="nav-link">Login</a>
+                <a href="/login" class="nav-link">Login</a>
             </li>
         </ul>
     </div>

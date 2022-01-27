@@ -121,7 +121,8 @@ const labels = [
         }
       },
     });
-} );
+ 
+});
 
 // Selecting table row
 $('.table-biodata').on( 'click', 'tr', function () {
@@ -132,17 +133,4 @@ $('.table-biodata').on( 'click', 'button', function (e) {
   e.preventDefault();
 });
 
-// Datepicker Input Form
-const inputDate = document.querySelector('input[name="tanggalLahir"]');
-const datepicker = new Datepicker(inputDate, {
-  format: {
-    toValue(date) {
-      const fullYearDate = date.replace(/\/(\d\d)$/, '/20$1');
-      return Datepicker.parseDate(fullYearDate, 'dd/mm/yyyy')
-    },
-    toDisplay(date) {
-      return Datepicker.formatDate(date , 'dd/mm/yyyy');
-    },
-  },
-  autohide: true,
-});
+

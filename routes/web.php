@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
@@ -18,3 +19,6 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/daftar-lulusan', [HomeController::class, 'daftarLulusan']);
 Route::get('/pengumuman-kelulusan', [HomeController::class, 'pengumuman']);
 Route::get('/login', [HomeController::class, 'login']);
+
+// Admin Route
+Route::get('/alumni', [AdminController::class, 'dashboard']);

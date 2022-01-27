@@ -18,7 +18,7 @@ class AdminController extends Controller
         return view('admin.dashboard', $data);
     }
 
-    public function dataDiri($page = null)
+    public function page($page = null)
     {
         // Form Biodata handler
         if ($page == 'biodata') {

@@ -24,4 +24,25 @@ class HomeController extends Controller
 
         return view('front.daftar-lulusan', $data);
     }
+
+    public function pengumuman(Request $request)
+    {
+        $nis = $request->input('nis');
+
+        $data = [
+            'title'     => 'Pengumuman Kelulusan',
+            'nis'       => $nis
+        ];
+
+        return view('front.pengumuman', $data);
+    }
+
+    public function login()
+    {
+        $data = [
+            'title'     => 'Login Alumni'
+        ];
+
+        return view('front.login', $data);
+    }
 }

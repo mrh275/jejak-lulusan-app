@@ -5,19 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal | Jejak Lulusan SMAN 1 Rawamerta</title>
+    <title>{{ $title }} | Jejak Lulusan SMAN 1 Rawamerta</title>
 
     <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
 
     <!-- CSS Assets -->
-    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="/assets/css/app.css">
     <link rel="stylesheet" href="/assets/css/page.css">
-
-    <!-- JS Assets -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    @if ($title == 'Daftar Lulusan')
+        @include('component.datatable')
+    @endif
 </head>
 
 <body class="bg-gray-200 overflow-auto">
@@ -55,8 +53,8 @@
                 <div class="partner">
                     <h2 class="partner-title">Link Terkait</h2>
                     <ul class="list-disc ml-5">
-                        <li class="partner-list"><a href="https://dapo.kemdikbud.go.id" class="backlink">Dapodik</a></li>
-                        <li class="partner-list"><a href="https://info.gtk.kemdikbud.go.id" class="backlink">Info GTK Dapodik</a></li>
+                        <li class="partner-list"><a href="https://sman1rawamerta.sch.id" class="backlink" target="_blank">Web Sekolah</a></li>
+                        <li class="partner-list"><a href="https://vervalponsel.sman1rawamerta.sch.id" class="backlink" target="_blank">Verval Ponsel</a></li>
                         <li class="partner-list"><a href="https://ptk.datadik.kemdikbud.go.id" class="backlink">PTK Datadik</a></li>
                         <li class="partner-list"><a href="https://ppdb.disdik.jabarprov.go.id" class="backlink">PPDB Jawa Barat</a></li>
                         <li class="partner-list"><a href="https://gtk.belajar.kemdikbud.go.id" class="backlink">Portal GTK</a></li>

@@ -50,8 +50,8 @@
                 <div class="partner">
                     <h2 class="partner-title">Link Terkait</h2>
                     <ul class="list-disc ml-5">
-                        <li class="partner-list"><a href="https://dapo.kemdikbud.go.id" class="backlink">Dapodik</a></li>
-                        <li class="partner-list"><a href="https://info.gtk.kemdikbud.go.id" class="backlink">Info GTK Dapodik</a></li>
+                        <li class="partner-list"><a href="https://sman1rawamerta.sch.id" class="backlink" target="_blank">Web Sekolah</a></li>
+                        <li class="partner-list"><a href="https://vervalponsel.sman1rawamerta.sch.id" class="backlink" target="_blank">Verval Ponsel</a></li>
                         <li class="partner-list"><a href="https://ptk.datadik.kemdikbud.go.id" class="backlink">PTK Datadik</a></li>
                         <li class="partner-list"><a href="https://ppdb.disdik.jabarprov.go.id" class="backlink">PPDB Jawa Barat</a></li>
                         <li class="partner-list"><a href="https://gtk.belajar.kemdikbud.go.id" class="backlink">Portal GTK</a></li>

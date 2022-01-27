@@ -22,3 +22,4 @@ Route::get('/login', [HomeController::class, 'login']);
 
 // Admin Route
 Route::get('/alumni', [AdminController::class, 'dashboard']);
+Route::get('/alumni/{page}', [AdminController::class, 'page']);

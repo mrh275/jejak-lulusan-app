@@ -10,13 +10,13 @@
     <div class="menu-wrapper">
         <ul class="nav-menu">
             <li class="nav-list">
-                <a href="/" id="dashboard" class="nav-link">
+                <a href="/alumni" id="dashboard" class="nav-link">
                     <i class='bx bx-grid-alt'></i>
                     <span class="link-name">Dashboard</span>
                 </a>
                 <ul class="dropdown-blank">
                     <li>
-                        <a href="/" class="dropdown-link"><span class="link-name-collapse">Dashboard</span></a>
+                        <a href="/alumni" class="dropdown-link"><span class="link-name-collapse">Dashboard</span></a>
                     </li>
                 </ul>
             </li>
@@ -30,25 +30,25 @@
                         <a href="javascript:void(0)" class="dropdown-link"><span class="link-name-collapse">Data Diri</span></a>
                     </li>
                     <li>
-                        <a href="/biodata.html" id="biodata" class="dropdown-link">
+                        <a href="/alumni/biodata" id="biodata" class="dropdown-link">
                             <i class='bx bxs-user-detail'></i>
                             <span class="dropdown-name">Biodata</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/data-orangtua.html" id="data-orangtua" class="dropdown-link">
+                        <a href="/alumni/data-orangtua" id="data-orangtua" class="dropdown-link">
                             <i class='fa fa-users'></i>
                             <span class="dropdown-name">Data Orang Tua</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/datatable-biodata.html" id="tabel-biodata" class="dropdown-link">
+                        <a href="/alumni/datatable-biodata" id="tabel-biodata" class="dropdown-link">
                             <i class='bx bxs-data'></i>
                             <span class="dropdown-name">Datatable Biodata</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/datatable-orangtua.html" id="tabel-orangtua" class="dropdown-link">
+                        <a href="/alumni/datatable-orangtua" id="tabel-orangtua" class="dropdown-link">
                             <i class='bx bxs-data'></i>
                             <span class="dropdown-name">Data Orang Tua</span>
                         </a>

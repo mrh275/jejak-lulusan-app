@@ -37,4 +37,14 @@ Jadi saya membuat aplikasi ini dengan harapan dapat membantu Guru Bimbingan Kons
      - User Role
      - User Level
 
+## Teknologi Aplikasi
+Aplikasi dini dibangun menggunakan teknologi dibawah ini
+
+1. HTML
+2. CSS (Mixed vanilla with Tailwindcss)
+3. Javascript (Mixed vanilla with jquery)
+4. PHP (Laravel 8)
+5. Icon (Font awesome + Boxicons)
+6. VanillaJS Datepicker (Thanks to @mymth, owner of this library)
+
 ## Made with :heart: by Muhamad Ramdani Hidayatullah

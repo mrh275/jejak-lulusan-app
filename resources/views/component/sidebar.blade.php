@@ -42,13 +42,13 @@
                         </a>
                     </li>
                     <li>
-                        <a href="./datatable-biodata.html" id="tabel-biodata" class="dropdown-link">
+                        <a href="{{ url('alumni') }}/datatable-biodata" id="tabel-biodata" class="dropdown-link">
                             <i class='bx bxs-data'></i>
                             <span class="dropdown-name">Datatable Biodata</span>
                         </a>
                     </li>
                     <li>
-                        <a href="./datatable-orangtua.html" id="tabel-orangtua" class="dropdown-link">
+                        <a href="{{ url('alumni') }}/datatable-orangtua" id="tabel-orangtua" class="dropdown-link">
                             <i class='bx bxs-data'></i>
                             <span class="dropdown-name">Data Orang Tua</span>
                         </a>

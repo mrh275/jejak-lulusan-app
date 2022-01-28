@@ -1,4 +1,5 @@
 @extends('layout.admin.main')
+
 @section('content')
     <div class="content">
         <h1 class="content-title">Dashboard</h1>
@@ -11,7 +12,7 @@
                     <i class='bx bxs-edit'></i>
                 </div>
                 <div class="card-footer">
-                    <a href="./page/list-post.html" class="header-readMore">
+                    <a href="../page/list-post.html" class="header-readMore">
                         <span>See more</span>
                         <i class='bx bx-right-arrow-alt'></i>
                     </a>
@@ -24,7 +25,7 @@
                     <i class='bx bxs-comment-detail'></i>
                 </div>
                 <div class="card-footer">
-                    <a href="./page/comment.html" class="header-readMore">
+                    <a href="../page/comment.html" class="header-readMore">
                         <span>See more</span>
                         <i class='bx bx-right-arrow-alt'></i>
                     </a>
@@ -44,7 +45,7 @@
                     <i class='bx bxs-edit'></i>
                 </div>
                 <div class="card-footer">
-                    <a href="./page/list-post.html" class="header-readMore">
+                    <a href="../page/list-post.html" class="header-readMore">
                         <span>See more</span>
                         <i class='bx bx-right-arrow-alt'></i>
                     </a>
@@ -60,7 +61,7 @@
                 <div class="popular-post-body">
                     <div class="popular-post-card">
                         <div class="card-img">
-                            <img src="/assets/img/img-1.jpg" alt="Images 1" class="popular-post-img">
+                            <img src="{{ url('assets/img') }}/img-1.jpg" alt="Images 1" class="popular-post-img">
                         </div>
                         <div class="card-text">
                             <h4 class="post-title">Judul Postingan 1</h4>
@@ -76,7 +77,7 @@
 
                     <div class="popular-post-card">
                         <div class="card-img">
-                            <img src="/assets/img/img-2.jpg" alt="Images 2" class="popular-post-img">
+                            <img src="{{ url('assets/img') }}/img-2.jpg" alt="Images 2" class="popular-post-img">
                         </div>
                         <div class="card-text">
                             <h4 class="post-title">Judul Postingan 2</h4>
@@ -92,7 +93,7 @@
 
                     <div class="popular-post-card">
                         <div class="card-img">
-                            <img src="/assets/img/img-3.jpg" alt="Images 3" class="popular-post-img">
+                            <img src="{{ url('assets/img') }}/img-3.jpg" alt="Images 3" class="popular-post-img">
                         </div>
                         <div class="card-text">
                             <h4 class="post-title">Judul Postingan 3</h4>
@@ -108,7 +109,7 @@
 
                     <div class="popular-post-card">
                         <div class="card-img">
-                            <img src="/assets/img/img-4.jpg" alt="Images 4" class="popular-post-img">
+                            <img src="{{ url('assets/img') }}/img-4.jpg" alt="Images 4" class="popular-post-img">
                         </div>
                         <div class="card-text">
                             <h4 class="post-title">Judul Postingan 4</h4>

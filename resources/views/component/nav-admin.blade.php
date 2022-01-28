@@ -40,7 +40,7 @@
                     <span class="nav-drop-name">Administrator</span>
                 </li>
                 <li class="nav-drop-list">
-                    <a href="/edit-akun.html" class="nav-drop-link">
+                    <a href="./edit-akun.html" class="nav-drop-link">
                         <i class='bx bxs-user'></i>
                         <span class="nav-drop-name">Profil</span>
                     </a>
@@ -54,7 +54,7 @@
                 </li>
                 <hr class="nav-drop-separator">
                 <li class="nav-drop-list">
-                    <a href="/logout.html" class="nav-drop-link">
+                    <a href="./logout.html" class="nav-drop-link">
                         <i class='bx bx-log-out'></i>
                         <span class="nav-drop-name">Logout</span>
                     </a>

@@ -1,7 +1,7 @@
 <div class="sidebar expand overflow-y-auto overflow-x-hidden">
     <div class="top-side">
         <div class="img-top">
-            <img src="/assets/img/logo.png" alt="Logo Admin">
+            <img src="{{ url('assets/img') }}/logo.png" alt="Logo Admin">
         </div>
         <div class="brand">
             <span class="brandName">JEJAK LULUSAN</span>
@@ -10,13 +10,13 @@
     <div class="menu-wrapper">
         <ul class="nav-menu">
             <li class="nav-list">
-                <a href="/alumni" id="dashboard" class="nav-link">
+                <a href="{{ url('alumni') }}" id="dashboard" class="nav-link">
                     <i class='bx bx-grid-alt'></i>
                     <span class="link-name">Dashboard</span>
                 </a>
                 <ul class="dropdown-blank">
                     <li>
-                        <a href="/alumni" class="dropdown-link"><span class="link-name-collapse">Dashboard</span></a>
+                        <a href="{{ url('alumni') }}" class="dropdown-link"><span class="link-name-collapse">Dashboard</span></a>
                     </li>
                 </ul>
             </li>
@@ -30,25 +30,25 @@
                         <a href="javascript:void(0)" class="dropdown-link"><span class="link-name-collapse">Data Diri</span></a>
                     </li>
                     <li>
-                        <a href="/alumni/biodata" id="biodata" class="dropdown-link">
+                        <a href="{{ url('alumni') }}/biodata" id="biodata" class="dropdown-link">
                             <i class='bx bxs-user-detail'></i>
                             <span class="dropdown-name">Biodata</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/alumni/data-orangtua" id="data-orangtua" class="dropdown-link">
+                        <a href="{{ url('alumni') }}/data-orangtua" id="data-orangtua" class="dropdown-link">
                             <i class='fa fa-users'></i>
                             <span class="dropdown-name">Data Orang Tua</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/alumni/datatable-biodata" id="tabel-biodata" class="dropdown-link">
+                        <a href="./datatable-biodata.html" id="tabel-biodata" class="dropdown-link">
                             <i class='bx bxs-data'></i>
                             <span class="dropdown-name">Datatable Biodata</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/alumni/datatable-orangtua" id="tabel-orangtua" class="dropdown-link">
+                        <a href="./datatable-orangtua.html" id="tabel-orangtua" class="dropdown-link">
                             <i class='bx bxs-data'></i>
                             <span class="dropdown-name">Data Orang Tua</span>
                         </a>
@@ -65,25 +65,25 @@
                         <a href="javascript:void(0)" class="dropdown-link"><span class="link-name-collapse">Data Kelulusan</span></a>
                     </li>
                     <li>
-                        <a href="/data-kuliah.html" id="data-kuliah" class="dropdown-link">
+                        <a href="./data-kuliah.html" id="data-kuliah" class="dropdown-link">
                             <i class='bx bxs-user-detail'></i>
                             <span class="dropdown-name">Data Kuliah</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/data-pekerjaan.html" id="data-pekerjaan" class="dropdown-link">
+                        <a href="./data-pekerjaan.html" id="data-pekerjaan" class="dropdown-link">
                             <i class='fa fa-users'></i>
                             <span class="dropdown-name">Data Pekerjaan</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/datatable-kuliah.html" id="tabel-kuliah" class="dropdown-link">
+                        <a href="./datatable-kuliah.html" id="tabel-kuliah" class="dropdown-link">
                             <i class='bx bxs-data'></i>
                             <span class="dropdown-name">Datatable Kuliah</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/datatable-pekerjaan.html" id="tabel-pekerjaan" class="dropdown-link">
+                        <a href="./datatable-pekerjaan.html" id="tabel-pekerjaan" class="dropdown-link">
                             <i class='bx bxs-data'></i>
                             <span class="dropdown-name">Datatable Pekerjaan</span>
                         </a>
@@ -100,31 +100,31 @@
                         <a href="javascript:void(0)" class="dropdown-link"><span class="link-name-collapse">User Manager</span></a>
                     </li>
                     <li>
-                        <a href="/edit-akun.html" id="edit-akun" class="dropdown-link">
+                        <a href="./edit-akun.html" id="edit-akun" class="dropdown-link">
                             <i class='bx bxs-user'></i>
                             <span class="dropdown-name">Edit Akun</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/ubah-password.html" id="ubah-password" class="dropdown-link">
+                        <a href="./ubah-password.html" id="ubah-password" class="dropdown-link">
                             <i class='bx bxs-key'></i>
                             <span class="dropdown-name">Ubah Password</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/user.html" id="user-account" class="dropdown-link">
+                        <a href="./user.html" id="user-account" class="dropdown-link">
                             <i class='bx bxs-user-account'></i>
                             <span class="dropdown-name">User Account</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/user-role.html" id="user-role" class="dropdown-link">
+                        <a href="./user-role.html" id="user-role" class="dropdown-link">
                             <i class='bx bxs-user-detail'></i>
                             <span class="dropdown-name">User Role</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/user-level.html" id="user-level" class="dropdown-link">
+                        <a href="./user-level.html" id="user-level" class="dropdown-link">
                             <i class='bx bxs-user-badge'></i>
                             <span class="dropdown-name">User Level</span>
                         </a>
@@ -136,14 +136,14 @@
     <div class="bottom-side">
         <ul class="nav-menu">
             <li class="nav-list">
-                <a href="/logout.html" class="nav-link user-link">
-                    <img src="/assets/img/no-profile-user.png" alt="" class="user-img">
+                <a href="./logout.html" class="nav-link user-link">
+                    <img src="{{ url('assets/img') }}/no-profile-user.png" alt="" class="user-img">
                     <span class="link-name">Administrator</span>
                     <i class='bx bx-log-out' style="margin-left: 20px; font-size: 30px;"></i>
                 </a>
                 <ul class="dropdown-blank">
                     <li>
-                        <a href="/logout.html" class="dropdown-link user-dropdown">
+                        <a href="./logout.html" class="dropdown-link user-dropdown">
                             <span class="link-name-collapse">Administrator</span>
                             <i class='bx bx-log-out'></i>
                         </a>

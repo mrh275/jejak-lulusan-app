@@ -30,9 +30,9 @@ class AdminController extends Controller
             return $this->dataOrangTua();
         }
 
-        // if ($page == 'datatable-biodata') {
-        //     return $this->tableBiodata();
-        // }
+        if ($page == 'datatable-biodata') {
+            return $this->tableBiodata();
+        }
         // if ($page == 'datatable-orangtua') {
         //     return $this->tableOrangTua();
         // }
@@ -60,16 +60,17 @@ class AdminController extends Controller
 
         return view('admin.data-orangtua', $data);
     }
-    // public function tableBiodata()
-    // {
-    //     $data = [
-    //         'title'     => 'Tabel Biodata Lulusan',
-    //         'activeMenu' => 'data-diri',
-    //         'activeSubMenu' => 'tabel-biodata'
-    //     ];
+    public function tableBiodata()
+    {
+        $data = [
+            'title'     => 'Tabel Biodata Lulusan',
+            'activeMenu' => 'data-diri',
+            'activeSubMenu' => 'tabel-biodata'
+        ];
 
-    //     return view('admin.dashboard', $data);
-    // }
+        return view('admin.datatable-biodata', $data);
+    }
+
     // public function tableOrangTua()
     // {
     //     $data = [

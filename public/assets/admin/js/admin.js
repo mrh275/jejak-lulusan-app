@@ -39,21 +39,18 @@ if(screen.width < 768) {
   $('.dropdown-menu').on('click', function(e) {
     e.stopPropagation();
   })
-  
-  
-  // $('.sidebar.expand ul.nav-menu').on('click', '.dropdown', function(e) {
-  //   e.stopPropagation();
-  // })
-  
-  
+
+  // Dropdown-right hover on mobile view
   $('.sidebar.collapse li.dropdown').hover( function() {
       $(this).find('.dropdown-menu').toggleClass('showMenu');
   })
   
+  // Notification dropdown toggle
   $('.btn-notif').on('click', function() {
       $(this).parent().find('.nav-dropdown').toggleClass('showNavDropdown')
   })
   
+  // User dropdown toggle
   $('.btn-user').on('click', function() {
       $(this).parent().find('.nav-dropdown').toggleClass('showNavDropdown')
   })
@@ -69,66 +66,3 @@ if(screen.width < 768) {
       autoplaySpeed: 2000,
       infinite: true,
     });
-  
-  //   Visitor chart
-  const labels = [
-      'Juli',
-      'Agustus',
-      'September',
-      'Oktober',
-      'November',
-      'Desember'
-    ];
-    const data = {
-      labels: labels,
-      datasets: [{
-        label: 'Pengunjung',
-        backgroundColor: '#0099ff',
-        borderColor: '#0099ff',
-        data: [70, 30, 54, 70, 120, 210, 463],
-      }]
-    };
-    const config = {
-      type: 'line',
-      data: data,
-      options: {
-          responsive: true,
-          plugin: {
-            title: {
-              display: true,
-              text: "Data pengunjung bulanan"
-            },
-          },
-      }
-    };
-    const myChart = new Chart(
-      document.getElementById('visitor-chart'),
-      config
-    );
-  
-    // List Post Datatable
-    $(document).ready(function() {
-      $('.table-biodata').DataTable({
-        "lengthMenu": [
-          [10, 15, 25, 50, 100, -1],
-          [10, 15, 25, 50, 100, "All"]
-        ],
-        "pagingType": "full_numbers",
-        "language": {
-          "paginate": {
-            "previous": "<i class='bx bx-chevron-left'></i>",
-            "next": "<i class='bx bx-chevron-right' ></i>"
-          }
-        },
-      });
-  } );
-  
-  // Selecting table row
-  $('.table-biodata').on( 'click', 'tr', function () {
-    $('tr').not(this).removeClass('selected');
-    $(this).toggleClass('selected')
-  } );
-  $('.table-biodata').on( 'click', 'button', function (e) {
-    e.preventDefault();
-  });
-  

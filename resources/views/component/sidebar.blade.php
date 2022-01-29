@@ -65,25 +65,25 @@
                         <a href="javascript:void(0)" class="dropdown-link"><span class="link-name-collapse">Data Kelulusan</span></a>
                     </li>
                     <li>
-                        <a href="./data-kuliah.html" id="data-kuliah" class="dropdown-link">
+                        <a href="{{ url('alumni') }}/data-kuliah" id="data-kuliah" class="dropdown-link">
                             <i class='bx bxs-user-detail'></i>
                             <span class="dropdown-name">Data Kuliah</span>
                         </a>
                     </li>
                     <li>
-                        <a href="./data-pekerjaan.html" id="data-pekerjaan" class="dropdown-link">
+                        <a href="{{ url('alumni') }}/data-pekerjaan" id="data-pekerjaan" class="dropdown-link">
                             <i class='fa fa-users'></i>
                             <span class="dropdown-name">Data Pekerjaan</span>
                         </a>
                     </li>
                     <li>
-                        <a href="./datatable-kuliah.html" id="tabel-kuliah" class="dropdown-link">
+                        <a href="{{ url('alumni') }}/datatable-kuliah" id="tabel-kuliah" class="dropdown-link">
                             <i class='bx bxs-data'></i>
                             <span class="dropdown-name">Datatable Kuliah</span>
                         </a>
                     </li>
                     <li>
-                        <a href="./datatable-pekerjaan.html" id="tabel-pekerjaan" class="dropdown-link">
+                        <a href="{{ url('alumni') }}/datatable-pekerjaan" id="tabel-pekerjaan" class="dropdown-link">
                             <i class='bx bxs-data'></i>
                             <span class="dropdown-name">Datatable Pekerjaan</span>
                         </a>

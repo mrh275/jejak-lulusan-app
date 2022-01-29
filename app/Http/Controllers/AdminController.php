@@ -30,12 +30,35 @@ class AdminController extends Controller
             return $this->dataOrangTua();
         }
 
+        //Tabel biodata
         if ($page == 'datatable-biodata') {
             return $this->tableBiodata();
         }
-        // if ($page == 'datatable-orangtua') {
-        //     return $this->tableOrangTua();
-        // }
+
+        // Tabel data orang tua
+        if ($page == 'datatable-orangtua') {
+            return $this->tableOrangTua();
+        }
+
+        // Form kuliah
+        if ($page == 'data-kuliah') {
+            return $this->kuliah();
+        }
+
+        // Form pekerjaan
+        if ($page == 'data-pekerjaan') {
+            return $this->pekerjaan();
+        }
+
+        // Tabel kuliah
+        if ($page == 'datatable-kuliah') {
+            return $this->tableKuliah();
+        }
+
+        // Tabel pekerjaan
+        if ($page == 'datatable-pekerjaan') {
+            return $this->tablePekerjaan();
+        }
 
         echo "Page not found";
     }
@@ -71,14 +94,58 @@ class AdminController extends Controller
         return view('admin.datatable-biodata', $data);
     }
 
-    // public function tableOrangTua()
-    // {
-    //     $data = [
-    //         'title'     => 'Tabel Data Orang Tua',
-    //         'activeMenu' => 'data-diri',
-    //         'activeSubMenu' => 'tabel-orangtua'
-    //     ];
+    public function tableOrangTua()
+    {
+        $data = [
+            'title'     => 'Tabel Data Orang Tua',
+            'activeMenu' => 'data-diri',
+            'activeSubMenu' => 'tabel-orangtua'
+        ];
 
-    //     return view('admin.dashboard', $data);
-    // }
+        return view('admin.datatable-orangtua', $data);
+    }
+
+    public function kuliah()
+    {
+        $data = [
+            'title'     => 'Form Data Kuliah',
+            'activeMenu' => 'kelulusan',
+            'activeSubMenu' => 'data-kuliah'
+        ];
+
+        return view('admin.data-kuliah', $data);
+    }
+
+    public function pekerjaan()
+    {
+        $data = [
+            'title'     => 'Form Data Pekerjaan',
+            'activeMenu' => 'kelulusan',
+            'activeSubMenu' => 'data-pekerjaan'
+        ];
+
+        return view('admin.data-pekerjaan', $data);
+    }
+
+    public function tableKuliah()
+    {
+        $data = [
+            'title'     => 'Tabel Data Kuliah',
+            'activeMenu' => 'kelulusan',
+            'activeSubMenu' => 'datatable-kuliah'
+        ];
+
+        return view('admin.datatable-kuliah', $data);
+    }
+
+    public function tablePekerjaan()
+    {
+        $data = [
+            'title'     => 'Tabel Data Pekerjaan',
+            'activeMenu' => 'kelulusan',
+            'activeSubMenu' => 'datatable-pekerjaan'
+        ];
+
+        return view('admin.datatable-pekerjaan', $data);
+    }
 }

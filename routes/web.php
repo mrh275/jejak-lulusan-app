@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +19,11 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/daftar-lulusan', [HomeController::class, 'daftarLulusan']);
 Route::get('/pengumuman-kelulusan', [HomeController::class, 'pengumuman']);
-Route::get('/login', [HomeController::class, 'login']);
+Route::get('/login', [HomeController::class, 'login'])->name('login')->middleware('guest');
 
 // Admin Route
-Route::get('/alumni', [AdminController::class, 'dashboard']);
-Route::get('/alumni/{page}', [AdminController::class, 'page']);
+Route::get('/alumni', [AdminController::class, 'dashboard'])->middleware('auth');
+Route::get('/alumni/{page}', [AdminController::class, 'page'])->middleware('auth');
+
+Route::post('/login/auth', [LoginController::class, 'auth']);
+Route::get('/logout', [LoginController::class, 'logout']);

@@ -25,9 +25,21 @@
             <li class="nav-list">
                 <a href="/pengumuman-kelulusan" class="nav-link">Pengumuman</a>
             </li>
-            <li class="nav-list">
-                <a href="/login" class="nav-link">Login</a>
-            </li>
+            @auth
+                <li class="nav-list">
+                    <span class="nav-link" style="color: #c7c7c7">({{ auth()->user()->name }})</span>
+                </li>
+                <li class="nav-list">
+                    <a href="/alumni" class="nav-link">Dashboard</a>
+                </li>
+                <li class="nav-list">
+                    <a href="/logout" class="nav-link">Logout</a>
+                </li>
+            @else
+                <li class="nav-list">
+                    <a href="/login" class="nav-link">Login</a>
+                </li>
+            @endauth
         </ul>
     </div>
 </nav>

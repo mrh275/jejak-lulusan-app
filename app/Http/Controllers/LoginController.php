@@ -19,7 +19,7 @@ class LoginController extends Controller
             return redirect()->intended('/alumni');
         }
 
-        return back()->withErrors(['username' => 'Username atau password salah']);
+        return back()->withErrors(['loginError' => 'Username atau password salah']);
     }
 
     public function logout(Request $request)

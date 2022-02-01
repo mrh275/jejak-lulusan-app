@@ -54,7 +54,7 @@
                 </li>
                 <hr class="nav-drop-separator">
                 <li class="nav-drop-list">
-                    <a href="./logout.html" class="nav-drop-link">
+                    <a href="/logout" class="nav-drop-link">
                         <i class='bx bx-log-out'></i>
                         <span class="nav-drop-name">Logout</span>
                     </a>

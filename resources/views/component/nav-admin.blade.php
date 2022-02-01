@@ -40,6 +40,12 @@
                     <span class="nav-drop-name">Administrator</span>
                 </li>
                 <li class="nav-drop-list">
+                    <a href="/" class="nav-drop-link">
+                        <i class='bx bx-home'></i>
+                        <span class="nav-drop-name">Halaman Portal</span>
+                    </a>
+                </li>
+                <li class="nav-drop-list">
                     <a href="./edit-akun.html" class="nav-drop-link">
                         <i class='bx bxs-user'></i>
                         <span class="nav-drop-name">Profil</span>

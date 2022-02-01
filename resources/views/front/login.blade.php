@@ -19,13 +19,27 @@
                 <p class="login-label">
                     Silahkan login terlebih dahulu!
                 </p>
-                <form action="" class="form-login" method="post">
+                @if (session()->has('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+
+                @if (session()->has('loginError'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ session('loginError') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+                <form action="/login/auth" class="form-login" method="post">
+                    @csrf
                     <div class="username-input-wrapper">
-                        <input type="text" class="form-control peer" id="input-user" placeholder="Username">
+                        <input type="text" class="form-control peer" id="input-user" name="username" placeholder="Username">
                         <label for="input-user" class="user-label peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-base peer-focus:text-gray-600">Username</label>
                     </div>
                     <div class="password-input-wrapper">
-                        <input type="text" class="form-control peer" id="input-password" placeholder="Password">
+                        <input type="password" class="form-control peer" id="input-password" name="password" placeholder="Password">
                         <label for="input-password" class="password-label peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-base peer-focus:text-gray-600">Password</label>
                     </div>
                     <div class="button-wrapper">

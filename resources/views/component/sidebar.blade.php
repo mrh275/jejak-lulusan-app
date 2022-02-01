@@ -136,14 +136,14 @@
     <div class="bottom-side">
         <ul class="nav-menu">
             <li class="nav-list">
-                <a href="./logout.html" class="nav-link user-link">
+                <a href="/logout" class="nav-link user-link">
                     <img src="{{ url('assets/img') }}/no-profile-user.png" alt="" class="user-img">
                     <span class="link-name">Administrator</span>
                     <i class='bx bx-log-out' style="margin-left: 20px; font-size: 30px;"></i>
                 </a>
                 <ul class="dropdown-blank">
                     <li>
-                        <a href="./logout.html" class="dropdown-link user-dropdown">
+                        <a href="/logout" class="dropdown-link user-dropdown">
                             <span class="link-name-collapse">Administrator</span>
                             <i class='bx bx-log-out'></i>
                         </a>

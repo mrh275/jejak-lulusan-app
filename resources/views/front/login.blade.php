@@ -35,11 +35,25 @@
                 <form action="/login/auth" class="form-login" method="post">
                     @csrf
                     <div class="username-input-wrapper">
-                        <input type="text" class="form-control peer" id="input-user" name="username" placeholder="Username">
+                        <input type="text" class="form-control peer @error('username')
+                            is-invalid
+                        @enderror" id="input-user" name="username" placeholder="Username" value="{{ old('username') }}">
+                        @error('username')
+                            <div class="invalid-feedback">
+                                <span>{{ $message }}</span>
+                            </div>
+                        @enderror
                         <label for="input-user" class="user-label peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-base peer-focus:text-gray-600">Username</label>
                     </div>
                     <div class="password-input-wrapper">
-                        <input type="password" class="form-control peer" id="input-password" name="password" placeholder="Password">
+                        <input type="password" class="form-control peer @error('password')
+                        is-invalid
+                    @enderror" id="input-password" name="password" placeholder="Password">
+                        @error('password')
+                            <div class="invalid-feedback">
+                                <span>{{ $message }}</span>
+                            </div>
+                        @enderror
                         <label for="input-password" class="password-label peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-base peer-focus:text-gray-600">Password</label>
                     </div>
                     <div class="button-wrapper">

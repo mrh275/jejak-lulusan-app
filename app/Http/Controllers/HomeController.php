@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Biodata;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -18,11 +19,10 @@ class HomeController extends Controller
     public function daftarLulusan()
     {
 
-        $data = [
+        return view('front.daftar-lulusan', [
             'title'     => 'Daftar Lulusan',
-        ];
-
-        return view('front.daftar-lulusan', $data);
+            'biodata'   => Biodata::with('kuliah', 'pekerjaan')->get(),
+        ]);
     }
 
     public function pengumuman(Request $request)

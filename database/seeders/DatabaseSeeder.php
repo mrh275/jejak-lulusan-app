@@ -2,6 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Biodata;
+use App\Models\Kuliah;
+use App\Models\Pekerjaan;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -31,5 +34,9 @@ class DatabaseSeeder extends Seeder
             'email'     => 'operator@operator.com',
             'is_admin'  => false,
         ]);
+
+        Biodata::factory(50)->create();
+        Kuliah::factory(25)->create();
+        Pekerjaan::factory(25)->create();
     }
 }

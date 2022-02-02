@@ -101,7 +101,8 @@ class AdminController extends Controller
         $data = [
             'title'     => 'Tabel Data Orang Tua',
             'activeMenu' => 'data-diri',
-            'activeSubMenu' => 'tabel-orangtua'
+            'activeSubMenu' => 'tabel-orangtua',
+            'dataOrangTua'  => Biodata::with('dataOrangTua')->get(),
         ];
 
         return view('admin.datatable-orangtua', $data);

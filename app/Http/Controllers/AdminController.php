@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Biodata;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -88,7 +89,8 @@ class AdminController extends Controller
         $data = [
             'title'     => 'Tabel Biodata Lulusan',
             'activeMenu' => 'data-diri',
-            'activeSubMenu' => 'tabel-biodata'
+            'activeSubMenu' => 'tabel-biodata',
+            'biodata'   => Biodata::all(),
         ];
 
         return view('admin.datatable-biodata', $data);

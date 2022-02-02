@@ -19,230 +19,31 @@
                         <td>Kelas</td>
                         <td>Lulusan</td>
                         <td>Status Lulusan</td>
-                        <td>Status Lanjutan</td>
+                        <td>Nama Kampus</td>
+                        <td>Nama Perusahaan</td>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="number"></td>
-                        <td>Muhamad Ramdani Hidayatullah</td>
-                        <td>9961929832</td>
-                        <td>Laki-laki</td>
-                        <td>Karawang, 30 Januari 1997</td>
-                        <td>12 IPA 1</td>
-                        <td>2015</td>
-                        <td>Kuliah</td>
-                        <td>STMIK Rosma</td>
-                    </tr>
-                    <tr>
-                        <td class="number"></td>
-                        <td>Adhinda Putri Larasati</td>
-                        <td>9961929832</td>
-                        <td>Perempuan</td>
-                        <td>Jakarta, 19 Juli 2001</td>
-                        <td>12 IPA 3</td>
-                        <td>2019</td>
-                        <td>Kerja</td>
-                        <td>Alfamart</td>
-                    </tr>
-                    <tr>
-                        <td class="number"></td>
-                        <td>Tri Indah Ayu Widari</td>
-                        <td>9961929863</td>
-                        <td>Perempuan</td>
-                        <td>Brebes, 21 Maret 2001</td>
-                        <td>12 IPA 2</td>
-                        <td>2019</td>
-                        <td>Kerja</td>
-                        <td>JVC Electronics</td>
-                    </tr>
-                    <tr>
-                        <td class="number"></td>
-                        <td>Erna Herlina</td>
-                        <td>0020938387</td>
-                        <td>Perempuan</td>
-                        <td>Karawang, 18 September 2001</td>
-                        <td>12 TKJ 1</td>
-                        <td>2020</td>
-                        <td>Kuliah</td>
-                        <td>UIN Sunan Gunung Djati</td>
-                    </tr>
-                    <tr>
-                        <td class="number"></td>
-                        <td>Kemala Putri</td>
-                        <td>0042884271</td>
-                        <td>Perempuan</td>
-                        <td>Karawang, 20 Agustus 2004</td>
-                        <td>12 RPL 1</td>
-                        <td>2021</td>
-                        <td>Kuliah</td>
-                        <td>Universitas Pasundan</td>
-                    </tr>
-                    <tr>
-                        <td class="number"></td>
-                        <td>Muhamad Ramdani Hidayatullah</td>
-                        <td>9961929832</td>
-                        <td>Laki-laki</td>
-                        <td>Karawang, 30 Januari 1997</td>
-                        <td>12 IPA 1</td>
-                        <td>2015</td>
-                        <td>Kuliah</td>
-                        <td>STMIK Rosma</td>
-                    </tr>
-                    <tr>
-                        <td class="number"></td>
-                        <td>Adhinda Putri Larasati</td>
-                        <td>9961929832</td>
-                        <td>Perempuan</td>
-                        <td>Jakarta, 19 Juli 2001</td>
-                        <td>12 IPA 3</td>
-                        <td>2019</td>
-                        <td>Kerja</td>
-                        <td>Alfamart</td>
-                    </tr>
-                    <tr>
-                        <td class="number"></td>
-                        <td>Tri Indah Ayu Widari</td>
-                        <td>9961929863</td>
-                        <td>Perempuan</td>
-                        <td>Brebes, 21 Maret 2001</td>
-                        <td>12 IPA 2</td>
-                        <td>2019</td>
-                        <td>Kerja</td>
-                        <td>JVC Electronics</td>
-                    </tr>
-                    <tr>
-                        <td class="number"></td>
-                        <td>Erna Herlina</td>
-                        <td>0020938387</td>
-                        <td>Perempuan</td>
-                        <td>Karawang, 18 September 2001</td>
-                        <td>12 TKJ 1</td>
-                        <td>2020</td>
-                        <td>Kuliah</td>
-                        <td>UIN Sunan Gunung Djati</td>
-                    </tr>
-                    <tr>
-                        <td class="number"></td>
-                        <td>Kemala Putri</td>
-                        <td>0042884271</td>
-                        <td>Perempuan</td>
-                        <td>Karawang, 20 Agustus 2004</td>
-                        <td>12 RPL 1</td>
-                        <td>2021</td>
-                        <td>Kuliah</td>
-                        <td>Universitas Pasundan</td>
-                    </tr>
-                    <tr>
-                        <td class="number"></td>
-                        <td>Muhamad Ramdani Hidayatullah</td>
-                        <td>9961929832</td>
-                        <td>Laki-laki</td>
-                        <td>Karawang, 30 Januari 1997</td>
-                        <td>12 IPA 1</td>
-                        <td>2015</td>
-                        <td>Kuliah</td>
-                        <td>STMIK Rosma</td>
-                    </tr>
-                    <tr>
-                        <td class="number"></td>
-                        <td>Adhinda Putri Larasati</td>
-                        <td>9961929832</td>
-                        <td>Perempuan</td>
-                        <td>Jakarta, 19 Juli 2001</td>
-                        <td>12 IPA 3</td>
-                        <td>2019</td>
-                        <td>Kerja</td>
-                        <td>Alfamart</td>
-                    </tr>
-                    <tr>
-                        <td class="number"></td>
-                        <td>Tri Indah Ayu Widari</td>
-                        <td>9961929863</td>
-                        <td>Perempuan</td>
-                        <td>Brebes, 21 Maret 2001</td>
-                        <td>12 IPA 2</td>
-                        <td>2019</td>
-                        <td>Kerja</td>
-                        <td>JVC Electronics</td>
-                    </tr>
-                    <tr>
-                        <td class="number"></td>
-                        <td>Erna Herlina</td>
-                        <td>0020938387</td>
-                        <td>Perempuan</td>
-                        <td>Karawang, 18 September 2001</td>
-                        <td>12 TKJ 1</td>
-                        <td>2020</td>
-                        <td>Kuliah</td>
-                        <td>UIN Sunan Gunung Djati</td>
-                    </tr>
-                    <tr>
-                        <td class="number"></td>
-                        <td>Kemala Putri</td>
-                        <td>0042884271</td>
-                        <td>Perempuan</td>
-                        <td>Karawang, 20 Agustus 2004</td>
-                        <td>12 RPL 1</td>
-                        <td>2021</td>
-                        <td>Kuliah</td>
-                        <td>Universitas Pasundan</td>
-                    </tr>
-                    <tr>
-                        <td class="number"></td>
-                        <td>Muhamad Ramdani Hidayatullah</td>
-                        <td>9961929832</td>
-                        <td>Laki-laki</td>
-                        <td>Karawang, 30 Januari 1997</td>
-                        <td>12 IPA 1</td>
-                        <td>2015</td>
-                        <td>Kuliah</td>
-                        <td>STMIK Rosma</td>
-                    </tr>
-                    <tr>
-                        <td class="number"></td>
-                        <td>Adhinda Putri Larasati</td>
-                        <td>9961929832</td>
-                        <td>Perempuan</td>
-                        <td>Jakarta, 19 Juli 2001</td>
-                        <td>12 IPA 3</td>
-                        <td>2019</td>
-                        <td>Kerja</td>
-                        <td>Alfamart</td>
-                    </tr>
-                    <tr>
-                        <td class="number"></td>
-                        <td>Tri Indah Ayu Widari</td>
-                        <td>9961929863</td>
-                        <td>Perempuan</td>
-                        <td>Brebes, 21 Maret 2001</td>
-                        <td>12 IPA 2</td>
-                        <td>2019</td>
-                        <td>Kerja</td>
-                        <td>JVC Electronics</td>
-                    </tr>
-                    <tr>
-                        <td class="number"></td>
-                        <td>Erna Herlina</td>
-                        <td>0020938387</td>
-                        <td>Perempuan</td>
-                        <td>Karawang, 18 September 2001</td>
-                        <td>12 TKJ 1</td>
-                        <td>2020</td>
-                        <td>Kuliah</td>
-                        <td>UIN Sunan Gunung Djati</td>
-                    </tr>
-                    <tr>
-                        <td class="number"></td>
-                        <td>Kemala Putri</td>
-                        <td>0042884271</td>
-                        <td>Perempuan</td>
-                        <td>Karawang, 20 Agustus 2004</td>
-                        <td>12 RPL 1</td>
-                        <td>2021</td>
-                        <td>Kuliah</td>
-                        <td>Universitas Pasundan</td>
-                    </tr>
+                    @foreach ($biodata as $bio)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $bio->nama }}</td>
+                            <td>{{ $bio->nisn }}</td>
+                            <td>
+                                @if ($bio->jenis_kelamin == 'L')
+                                    Laki-laki
+                                @else
+                                    Perempuan
+                                @endif
+                            </td>
+                            <td>{{ $bio->tempat_lahir . ', ' . $bio->tanggal_lahir }}</td>
+                            <td>{{ $bio->kelas }}</td>
+                            <td>{{ $bio->tahun_lulus }}</td>
+                            <td>{{ $bio->status_lulusan }}</td>
+                            <td>{{ $bio->kuliah->kampus ?? '-' }}</td>
+                            <td>{{ $bio->pekerjaan->nama_perusahaan ?? '-' }}</td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

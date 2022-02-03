@@ -12,6 +12,11 @@ document.getElementById("toggleMenu").addEventListener("click", function() {
 
 })
 
+document.querySelector('.dropdown').addEventListener('click', function() {
+  document.querySelector('.dropdown-menu').classList.toggle('hide');
+  document.querySelector('.dropdown-menu').classList.toggle('show');
+})
+
 // Datatables
 $(document).ready(function() {
   $('#daftar-lulusan').DataTable({

@@ -715,6 +715,64 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
+.dropdown-menu{
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+}
+
+@media (min-width: 1280px){
+  .dropdown-menu{
+    position: absolute;
+  }
+
+  .dropdown-menu{
+    right: 0px;
+  }
+
+  .dropdown-menu{
+    margin-top: 0.75rem;
+  }
+
+  .dropdown-menu{
+    border-radius: 0.375rem;
+  }
+
+  .dropdown-menu{
+    --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+}
+
+.dropdown-menu.hide{
+  visibility: hidden;
+}
+
+.dropdown-menu.show{
+  visibility: visible;
+}
+
+.drop-item{
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+@media (min-width: 1280px){
+  .drop-item{
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .drop-item{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+/* .nav-link:hover > .dropdown-menu {
+        @apply block;
+    } */
+
 /* Main Container */
 
 .main-container{

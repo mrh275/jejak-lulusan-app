@@ -40,6 +40,14 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'user' => [
+            'driver' => 'session',
+            'provider' => 'users'
+        ],
+        'alumni' => [
+            'driver' => 'session',
+            'provider' => 'alumni'
+        ],
     ],
 
     /*
@@ -63,6 +71,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+        'alumni' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Biodata::class,
         ],
 
         // 'users' => [

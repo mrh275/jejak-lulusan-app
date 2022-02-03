@@ -37,12 +37,21 @@ class HomeController extends Controller
         return view('front.pengumuman', $data);
     }
 
-    public function login()
+    public function loginAlumni()
     {
         $data = [
             'title'     => 'Login Alumni'
         ];
 
-        return view('front.login', $data);
+        return view('front.login-alumni', $data);
+    }
+
+    public function loginAdmin()
+    {
+        $data = [
+            'title'     => 'Login Admin'
+        ];
+
+        return view('front.login-admin', $data);
     }
 }

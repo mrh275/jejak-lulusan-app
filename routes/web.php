@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AlumniController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,11 +20,17 @@ use App\Http\Controllers\LoginController;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/daftar-lulusan', [HomeController::class, 'daftarLulusan']);
 Route::get('/pengumuman-kelulusan', [HomeController::class, 'pengumuman']);
-Route::get('/login', [HomeController::class, 'login'])->name('login')->middleware('guest');
+Route::get('/login/alumni', [HomeController::class, 'loginAlumni'])->name('login')->middleware('guest');
+Route::get('/login/admin', [HomeController::class, 'loginAdmin'])->middleware('guest');
+
+// Alumni Route
+Route::get('/alumni', [AlumniController::class, 'dashboard'])->middleware('alumni');
+Route::get('/alumni/{page}', [AlumniController::class, 'page'])->middleware('alumni');
 
 // Admin Route
-Route::get('/alumni', [AdminController::class, 'dashboard'])->middleware('auth');
-Route::get('/alumni/{page}', [AdminController::class, 'page'])->middleware('auth');
+Route::get('/admin', [AdminController::class, 'dashboard'])->middleware('auth');
+Route::get('/admin/{page}', [AdminController::class, 'page'])->middleware('auth');
 
 Route::post('/login/auth', [LoginController::class, 'auth']);
+Route::post('/login/alumni', [LoginController::class, 'alumni']);
 Route::get('/logout', [LoginController::class, 'logout']);

@@ -25,21 +25,46 @@
             <li class="nav-list">
                 <a href="/pengumuman-kelulusan" class="nav-link">Pengumuman</a>
             </li>
-            @auth
-                <li class="nav-list">
-                    <span class="nav-link" style="color: #c7c7c7">({{ auth()->user()->name }})</span>
-                </li>
-                <li class="nav-list">
-                    <a href="/alumni" class="nav-link">Dashboard</a>
-                </li>
-                <li class="nav-list">
-                    <a href="/logout" class="nav-link">Logout</a>
+
+            @if (session()->has('nisn'))
+                <li class="nav-list dropdown">
+                    <a href="javascript:void(0)" class="nav-link"><span class="nav-link" style="color: #c7c7c7">({{ session()->get('name') }})</span></a>
+                    <ul class="dropdown-menu hide">
+                        <li class="drop-item">
+                            <a href="/alumni" class="nav-link">Dashboard</a>
+                        </li>
+                        <li class="drop-item">
+                            <a href="/logout" class="nav-link">Logout</a>
+                        </li>
+                    </ul>
                 </li>
             @else
-                <li class="nav-list">
-                    <a href="/login" class="nav-link">Login</a>
-                </li>
-            @endauth
+                @auth
+                    <li class="nav-list dropdown">
+                        <a href="javascript:void(0)" class="nav-link"><span class="nav-link" style="color: #c7c7c7">({{ auth()->user()->name }})</span></a>
+                        <ul class="dropdown-menu hide">
+                            <li class="drop-item">
+                                <a href="/admin" class="nav-link">Dashboard</a>
+                            </li>
+                            <li class="drop-item">
+                                <a href="/logout" class="nav-link">Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                @else
+                    <li class="nav-list dropdown">
+                        <a href="javascript:void(0)" class="nav-link">Login</a>
+                        <ul class="dropdown-menu hide">
+                            <li class="drop-item">
+                                <a href="/login/alumni" class="nav-link">Alumni</a>
+                            </li>
+                            <li class="drop-item">
+                                <a href="/login/admin" class="nav-link">Admin</a>
+                            </li>
+                        </ul>
+                    </li>
+                @endauth
+            @endif
         </ul>
     </div>
 </nav>

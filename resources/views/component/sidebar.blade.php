@@ -41,18 +41,33 @@
                             <span class="dropdown-name">Data Orang Tua</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="{{ url('alumni') }}/datatable-biodata" id="tabel-biodata" class="dropdown-link">
-                            <i class='bx bxs-data'></i>
-                            <span class="dropdown-name">Datatable Biodata</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ url('alumni') }}/datatable-orangtua" id="tabel-orangtua" class="dropdown-link">
-                            <i class='bx bxs-data'></i>
-                            <span class="dropdown-name">Data Orang Tua</span>
-                        </a>
-                    </li>
+                    @can('admin')
+                        <li>
+                            <a href="{{ url('alumni') }}/datatable-biodata" id="tabel-biodata" class="dropdown-link">
+                                <i class='bx bxs-data'></i>
+                                <span class="dropdown-name">Datatable Biodata</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('alumni') }}/datatable-orangtua" id="tabel-orangtua" class="dropdown-link">
+                                <i class='bx bxs-data'></i>
+                                <span class="dropdown-name">Data Orang Tua</span>
+                            </a>
+                        </li>
+                    @elsecan('operator')
+                        <li>
+                            <a href="{{ url('alumni') }}/datatable-biodata" id="tabel-biodata" class="dropdown-link">
+                                <i class='bx bxs-data'></i>
+                                <span class="dropdown-name">Datatable Biodata</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('alumni') }}/datatable-orangtua" id="tabel-orangtua" class="dropdown-link">
+                                <i class='bx bxs-data'></i>
+                                <span class="dropdown-name">Data Orang Tua</span>
+                            </a>
+                        </li>
+                    @endcan
                 </ul>
             </li>
             <li class="nav-list dropdown">
@@ -76,61 +91,78 @@
                             <span class="dropdown-name">Data Pekerjaan</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="{{ url('alumni') }}/datatable-kuliah" id="tabel-kuliah" class="dropdown-link">
-                            <i class='bx bxs-data'></i>
-                            <span class="dropdown-name">Datatable Kuliah</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ url('alumni') }}/datatable-pekerjaan" id="tabel-pekerjaan" class="dropdown-link">
-                            <i class='bx bxs-data'></i>
-                            <span class="dropdown-name">Datatable Pekerjaan</span>
-                        </a>
-                    </li>
+                    @can('admin')
+                        <li>
+                            <a href="{{ url('alumni') }}/datatable-kuliah" id="tabel-kuliah" class="dropdown-link">
+                                <i class='bx bxs-data'></i>
+                                <span class="dropdown-name">Datatable Kuliah</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('alumni') }}/datatable-pekerjaan" id="tabel-pekerjaan" class="dropdown-link">
+                                <i class='bx bxs-data'></i>
+                                <span class="dropdown-name">Datatable Pekerjaan</span>
+                            </a>
+                        </li>
+                    @elsecan('operator')
+                        <li>
+                            <a href="{{ url('alumni') }}/datatable-kuliah" id="tabel-kuliah" class="dropdown-link">
+                                <i class='bx bxs-data'></i>
+                                <span class="dropdown-name">Datatable Kuliah</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('alumni') }}/datatable-pekerjaan" id="tabel-pekerjaan" class="dropdown-link">
+                                <i class='bx bxs-data'></i>
+                                <span class="dropdown-name">Datatable Pekerjaan</span>
+                            </a>
+                        </li>
+                    @endcan
                 </ul>
             </li>
-            <li class="nav-list dropdown">
-                <a href="javascript:void(0)" id="user-manager" class="nav-link">
-                    <i class='bx bx-user'></i>
-                    <span class="link-name">User Manager</span>
-                </a>
-                <ul class="dropdown-menu hide">
-                    <li>
-                        <a href="javascript:void(0)" class="dropdown-link"><span class="link-name-collapse">User Manager</span></a>
-                    </li>
-                    <li>
-                        <a href="./edit-akun.html" id="edit-akun" class="dropdown-link">
-                            <i class='bx bxs-user'></i>
-                            <span class="dropdown-name">Edit Akun</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./ubah-password.html" id="ubah-password" class="dropdown-link">
-                            <i class='bx bxs-key'></i>
-                            <span class="dropdown-name">Ubah Password</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./user.html" id="user-account" class="dropdown-link">
-                            <i class='bx bxs-user-account'></i>
-                            <span class="dropdown-name">User Account</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./user-role.html" id="user-role" class="dropdown-link">
-                            <i class='bx bxs-user-detail'></i>
-                            <span class="dropdown-name">User Role</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./user-level.html" id="user-level" class="dropdown-link">
-                            <i class='bx bxs-user-badge'></i>
-                            <span class="dropdown-name">User Level</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
+            @can('admin')
+                <li class="nav-list dropdown">
+                    <a href="javascript:void(0)" id="user-manager" class="nav-link">
+                        <i class='bx bx-user'></i>
+                        <span class="link-name">User Manager</span>
+                    </a>
+                    <ul class="dropdown-menu hide">
+                        <li>
+                            <a href="javascript:void(0)" class="dropdown-link"><span class="link-name-collapse">User Manager</span></a>
+                        </li>
+                        <li>
+                            <a href="./edit-akun.html" id="edit-akun" class="dropdown-link">
+                                <i class='bx bxs-user'></i>
+                                <span class="dropdown-name">Edit Akun</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./ubah-password.html" id="ubah-password" class="dropdown-link">
+                                <i class='bx bxs-key'></i>
+                                <span class="dropdown-name">Ubah Password</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./user.html" id="user-account" class="dropdown-link">
+                                <i class='bx bxs-user-account'></i>
+                                <span class="dropdown-name">User Account</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./user-role.html" id="user-role" class="dropdown-link">
+                                <i class='bx bxs-user-detail'></i>
+                                <span class="dropdown-name">User Role</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./user-level.html" id="user-level" class="dropdown-link">
+                                <i class='bx bxs-user-badge'></i>
+                                <span class="dropdown-name">User Level</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            @endcan
         </ul>
     </div>
     <div class="bottom-side">

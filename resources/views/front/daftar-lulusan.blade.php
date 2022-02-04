@@ -15,7 +15,6 @@
                         <td>Nama</td>
                         <td>NISN</td>
                         <td>Jenis Kelamin</td>
-                        <td>Tempat, Tanggal Lahir</td>
                         <td>Kelas</td>
                         <td>Lulusan</td>
                         <td>Status Lulusan</td>
@@ -36,7 +35,6 @@
                                     Perempuan
                                 @endif
                             </td>
-                            <td>{{ $bio->tempat_lahir . ', ' . $bio->tanggal_lahir }}</td>
                             <td>{{ $bio->kelas }}</td>
                             <td>{{ $bio->tahun_lulus }}</td>
                             <td>{{ $bio->status_lulusan }}</td>

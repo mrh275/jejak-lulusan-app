@@ -120,28 +120,28 @@
                     @endcan
                 </ul>
             </li>
-            @can('admin')
-                <li class="nav-list dropdown">
-                    <a href="javascript:void(0)" id="user-manager" class="nav-link">
-                        <i class='bx bx-user'></i>
-                        <span class="link-name">User Manager</span>
-                    </a>
-                    <ul class="dropdown-menu hide">
-                        <li>
-                            <a href="javascript:void(0)" class="dropdown-link"><span class="link-name-collapse">User Manager</span></a>
-                        </li>
-                        <li>
-                            <a href="./edit-akun.html" id="edit-akun" class="dropdown-link">
-                                <i class='bx bxs-user'></i>
-                                <span class="dropdown-name">Edit Akun</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./ubah-password.html" id="ubah-password" class="dropdown-link">
-                                <i class='bx bxs-key'></i>
-                                <span class="dropdown-name">Ubah Password</span>
-                            </a>
-                        </li>
+            <li class="nav-list dropdown">
+                <a href="javascript:void(0)" id="user-manager" class="nav-link">
+                    <i class='bx bx-user'></i>
+                    <span class="link-name">User Manager</span>
+                </a>
+                <ul class="dropdown-menu hide">
+                    <li>
+                        <a href="javascript:void(0)" class="dropdown-link"><span class="link-name-collapse">User Manager</span></a>
+                    </li>
+                    <li>
+                        <a href="./edit-akun.html" id="edit-akun" class="dropdown-link">
+                            <i class='bx bxs-user'></i>
+                            <span class="dropdown-name">Edit Akun</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./ubah-password.html" id="ubah-password" class="dropdown-link">
+                            <i class='bx bxs-key'></i>
+                            <span class="dropdown-name">Ubah Password</span>
+                        </a>
+                    </li>
+                    @can('admin')
                         <li>
                             <a href="./user.html" id="user-account" class="dropdown-link">
                                 <i class='bx bxs-user-account'></i>
@@ -160,9 +160,9 @@
                                 <span class="dropdown-name">User Level</span>
                             </a>
                         </li>
-                    </ul>
-                </li>
-            @endcan
+                    @endcan
+                </ul>
+            </li>
         </ul>
     </div>
     <div class="bottom-side">
@@ -170,13 +170,25 @@
             <li class="nav-list">
                 <a href="/logout" class="nav-link user-link">
                     <img src="{{ url('assets/img') }}/no-profile-user.png" alt="" class="user-img">
-                    <span class="link-name">Administrator</span>
+                    <span class="link-name">
+                        @if (isset(Auth::user()->name))
+                            {{ Auth::user()->name }}
+                        @else
+                            {{ Str::limit(session()->get('name'), 12) }}
+                        @endif
+                    </span>
                     <i class='bx bx-log-out' style="margin-left: 20px; font-size: 30px;"></i>
                 </a>
                 <ul class="dropdown-blank">
                     <li>
                         <a href="/logout" class="dropdown-link user-dropdown">
-                            <span class="link-name-collapse">Administrator</span>
+                            <span class="link-name-collapse" style="white-space: nowrap;">
+                                @if (isset(Auth::user()->name))
+                                    {{ Auth::user()->name }}
+                                @else
+                                    {{ Str::limit(session()->get('name'), 12) }}
+                                @endif
+                            </span>
                             <i class='bx bx-log-out'></i>
                         </a>
                     </li>

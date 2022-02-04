@@ -22,9 +22,6 @@
             <li class="nav-list">
                 <a href="/daftar-lulusan" class="nav-link">Daftar Lulusan</a>
             </li>
-            <li class="nav-list">
-                <a href="/pengumuman-kelulusan" class="nav-link">Pengumuman</a>
-            </li>
 
             @if (session()->has('nisn'))
                 <li class="nav-list dropdown">

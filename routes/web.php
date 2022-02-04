@@ -19,7 +19,6 @@ use App\Http\Controllers\AlumniController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/daftar-lulusan', [HomeController::class, 'daftarLulusan']);
-Route::get('/pengumuman-kelulusan', [HomeController::class, 'pengumuman']);
 Route::get('/login/alumni', [HomeController::class, 'loginAlumni'])->name('login')->middleware('guest');
 Route::get('/login/admin', [HomeController::class, 'loginAdmin'])->middleware('guest');
 

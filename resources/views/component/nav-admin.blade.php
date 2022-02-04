@@ -37,7 +37,13 @@
             </button>
             <ul class="nav-dropdown">
                 <li class="nav-drop-list nav-drop-username">
-                    <span class="nav-drop-name">Administrator</span>
+                    <span class="nav-drop-name">
+                        @if (isset(Auth::user()->name))
+                            {{ Auth::user()->name }}
+                        @else
+                            {{ session()->get('name') }}
+                        @endif
+                    </span>
                 </li>
                 <li class="nav-drop-list">
                     <a href="/" class="nav-drop-link">

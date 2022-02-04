@@ -25,18 +25,6 @@ class HomeController extends Controller
         ]);
     }
 
-    public function pengumuman(Request $request)
-    {
-        $nis = $request->input('nis');
-
-        $data = [
-            'title'     => 'Pengumuman Kelulusan',
-            'nis'       => $nis
-        ];
-
-        return view('front.pengumuman', $data);
-    }
-
     public function loginAlumni()
     {
         $data = [

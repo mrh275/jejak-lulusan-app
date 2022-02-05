@@ -30,41 +30,41 @@
                         <a href="javascript:void(0)" class="dropdown-link"><span class="link-name-collapse">Data Diri</span></a>
                     </li>
                     <li>
-                        <a href="{{ url('alumni') }}/biodata" id="biodata" class="dropdown-link">
+                        <a href="{{ isset(Auth::user()->name) ? url('admin') : url('alumni') }}/biodata" id="biodata" class="dropdown-link">
                             <i class='bx bxs-user-detail'></i>
                             <span class="dropdown-name">Biodata</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('alumni') }}/data-orangtua" id="data-orangtua" class="dropdown-link">
+                        <a href="{{ isset(Auth::user()->name) ? url('admin') : url('alumni') }}/data-orangtua" id="data-orangtua" class="dropdown-link">
                             <i class='fa fa-users'></i>
                             <span class="dropdown-name">Data Orang Tua</span>
                         </a>
                     </li>
                     @can('admin')
                         <li>
-                            <a href="{{ url('alumni') }}/datatable-biodata" id="tabel-biodata" class="dropdown-link">
+                            <a href="{{ url('admin') }}/datatable-biodata" id="tabel-biodata" class="dropdown-link">
                                 <i class='bx bxs-data'></i>
                                 <span class="dropdown-name">Datatable Biodata</span>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url('alumni') }}/datatable-orangtua" id="tabel-orangtua" class="dropdown-link">
+                            <a href="{{ url('admin') }}/datatable-orangtua" id="tabel-orangtua" class="dropdown-link">
                                 <i class='bx bxs-data'></i>
-                                <span class="dropdown-name">Data Orang Tua</span>
+                                <span class="dropdown-name">Datatable Orang Tua</span>
                             </a>
                         </li>
                     @elsecan('operator')
                         <li>
-                            <a href="{{ url('alumni') }}/datatable-biodata" id="tabel-biodata" class="dropdown-link">
+                            <a href="{{ url('admin') }}/datatable-biodata" id="tabel-biodata" class="dropdown-link">
                                 <i class='bx bxs-data'></i>
                                 <span class="dropdown-name">Datatable Biodata</span>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url('alumni') }}/datatable-orangtua" id="tabel-orangtua" class="dropdown-link">
+                            <a href="{{ url('admin') }}/datatable-orangtua" id="tabel-orangtua" class="dropdown-link">
                                 <i class='bx bxs-data'></i>
-                                <span class="dropdown-name">Data Orang Tua</span>
+                                <span class="dropdown-name">Datatable Orang Tua</span>
                             </a>
                         </li>
                     @endcan
@@ -80,39 +80,39 @@
                         <a href="javascript:void(0)" class="dropdown-link"><span class="link-name-collapse">Data Kelulusan</span></a>
                     </li>
                     <li>
-                        <a href="{{ url('alumni') }}/data-kuliah" id="data-kuliah" class="dropdown-link">
+                        <a href="{{ isset(Auth::user()->name) ? url('admin') : url('alumni') }}/data-kuliah" id="data-kuliah" class="dropdown-link">
                             <i class='bx bxs-user-detail'></i>
                             <span class="dropdown-name">Data Kuliah</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('alumni') }}/data-pekerjaan" id="data-pekerjaan" class="dropdown-link">
+                        <a href="{{ isset(Auth::user()->name) ? url('admin') : url('alumni') }}/data-pekerjaan" id="data-pekerjaan" class="dropdown-link">
                             <i class='fa fa-users'></i>
                             <span class="dropdown-name">Data Pekerjaan</span>
                         </a>
                     </li>
                     @can('admin')
                         <li>
-                            <a href="{{ url('alumni') }}/datatable-kuliah" id="tabel-kuliah" class="dropdown-link">
+                            <a href="{{ url('admin') }}/datatable-kuliah" id="tabel-kuliah" class="dropdown-link">
                                 <i class='bx bxs-data'></i>
                                 <span class="dropdown-name">Datatable Kuliah</span>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url('alumni') }}/datatable-pekerjaan" id="tabel-pekerjaan" class="dropdown-link">
+                            <a href="{{ url('admin') }}/datatable-pekerjaan" id="tabel-pekerjaan" class="dropdown-link">
                                 <i class='bx bxs-data'></i>
                                 <span class="dropdown-name">Datatable Pekerjaan</span>
                             </a>
                         </li>
                     @elsecan('operator')
                         <li>
-                            <a href="{{ url('alumni') }}/datatable-kuliah" id="tabel-kuliah" class="dropdown-link">
+                            <a href="{{ url('admin') }}/datatable-kuliah" id="tabel-kuliah" class="dropdown-link">
                                 <i class='bx bxs-data'></i>
                                 <span class="dropdown-name">Datatable Kuliah</span>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url('alumni') }}/datatable-pekerjaan" id="tabel-pekerjaan" class="dropdown-link">
+                            <a href="{{ url('admin') }}/datatable-pekerjaan" id="tabel-pekerjaan" class="dropdown-link">
                                 <i class='bx bxs-data'></i>
                                 <span class="dropdown-name">Datatable Pekerjaan</span>
                             </a>
@@ -120,28 +120,29 @@
                     @endcan
                 </ul>
             </li>
-            <li class="nav-list dropdown">
-                <a href="javascript:void(0)" id="user-manager" class="nav-link">
-                    <i class='bx bx-user'></i>
-                    <span class="link-name">User Manager</span>
-                </a>
-                <ul class="dropdown-menu hide">
-                    <li>
-                        <a href="javascript:void(0)" class="dropdown-link"><span class="link-name-collapse">User Manager</span></a>
-                    </li>
-                    <li>
-                        <a href="./edit-akun.html" id="edit-akun" class="dropdown-link">
-                            <i class='bx bxs-user'></i>
-                            <span class="dropdown-name">Edit Akun</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./ubah-password.html" id="ubah-password" class="dropdown-link">
-                            <i class='bx bxs-key'></i>
-                            <span class="dropdown-name">Ubah Password</span>
-                        </a>
-                    </li>
-                    @can('admin')
+            @can('admin')
+                <li class="nav-list dropdown">
+                    <a href="javascript:void(0)" id="user-manager" class="nav-link">
+                        <i class='bx bx-user'></i>
+                        <span class="link-name">User Manager</span>
+                    </a>
+                    <ul class="dropdown-menu hide">
+                        <li>
+                            <a href="javascript:void(0)" class="dropdown-link"><span class="link-name-collapse">User Manager</span></a>
+                        </li>
+                        <li>
+                            <a href="./edit-akun.html" id="edit-akun" class="dropdown-link">
+                                <i class='bx bxs-user'></i>
+                                <span class="dropdown-name">Edit Akun</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./ubah-password.html" id="ubah-password" class="dropdown-link">
+                                <i class='bx bxs-key'></i>
+                                <span class="dropdown-name">Ubah Password</span>
+                            </a>
+                        </li>
+
                         <li>
                             <a href="./user.html" id="user-account" class="dropdown-link">
                                 <i class='bx bxs-user-account'></i>
@@ -160,9 +161,9 @@
                                 <span class="dropdown-name">User Level</span>
                             </a>
                         </li>
-                    @endcan
-                </ul>
-            </li>
+                    </ul>
+                </li>
+            @endcan
         </ul>
     </div>
     <div class="bottom-side">
@@ -174,7 +175,7 @@
                         @if (isset(Auth::user()->name))
                             {{ Auth::user()->name }}
                         @else
-                            {{ Str::limit(session()->get('name'), 12) }}
+                            {{ Str::limit(session()->get('name'), 10, '...') }}
                         @endif
                     </span>
                     <i class='bx bx-log-out' style="margin-left: 20px; font-size: 30px;"></i>
@@ -186,7 +187,7 @@
                                 @if (isset(Auth::user()->name))
                                     {{ Auth::user()->name }}
                                 @else
-                                    {{ Str::limit(session()->get('name'), 12) }}
+                                    {{ Str::limit(session()->get('name'), 12), '...' }}
                                 @endif
                             </span>
                             <i class='bx bx-log-out'></i>

@@ -9,20 +9,16 @@ Jadi saya membuat aplikasi ini dengan harapan dapat membantu Guru Bimbingan Kons
 1. Portal/Frontend
    - Home
    - Daftar Lulusan (Datatables)
-   - Pengumuman Kelulusan
    - Login Panel Alumni/Lulusan
   
 2. Panel Alumni/Lulusan
    - Dashboard
    - Data Diri
-        - Form Biodata
-        - Form Data Orang Tua
+      - Form Biodata
+      - Form Data Orang Tua
    - Data Kelulusan
      - Form Data Kuliah
      - Form Data Pekerjaan
-   - Pengaturan Akun
-   - Profil Akun
-   - Ubah Password
 
 3. Panel Admin
    - Semua Fitur dari Panel Alumni

@@ -23,7 +23,7 @@
                             <td>{{ $loop->iteration }}</td>
                             <td class="nama text-left">{{ $data->nama }}</td>
                             <td>{{ $data->nisn }}</td>
-                            <td>{{ $data->kelas }}</td>
+                            <td>{{ Str::upper(str_replace('-', ' ', $data->kelas)) }}</td>
                             <td>{{ $data->tahun_lulus }}</td>
                             <td>{{ $data->dataOrangTua->nama_ayah }}</td>
                             <td>{{ $data->dataOrangTua->nama_ibu }}</td>

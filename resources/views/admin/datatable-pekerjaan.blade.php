@@ -27,7 +27,7 @@
                                 <td class="number"></td>
                                 <td class="nama">{{ $data->nama }}</td>
                                 <td>{{ $data->nisn }}</td>
-                                <td>{{ $data->kelas }}</td>
+                                <td>{{ Str::upper(str_replace('-', ' ', $data->kelas)) }}</td>
                                 <td>{{ $data->tahun_lulus }}</td>
                                 <td>{{ $data->pekerjaan->nama_perusahaan }}</td>
                                 <td>{{ $data->pekerjaan->divisi }}</td>

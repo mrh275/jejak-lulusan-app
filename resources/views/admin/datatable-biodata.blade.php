@@ -26,7 +26,7 @@
                             <td>{{ $bio->nisn }}</td>
                             <td>{{ $bio->nis }}</td>
                             <td>{{ $bio->tempat_lahir . ', ' . \Carbon\Carbon::parse($bio->tanggal_lahir)->isoFormat('D MMMM Y') }}</td>
-                            <td>{{ $bio->kelas }}</td>
+                            <td>{{ Str::upper(str_replace('-', ' ', $bio->kelas)) }}</td>
                             <td>{{ $bio->tahun_lulus }}</td>
                             <td>{{ $bio->status_lulusan }}</td>
                         </tr>

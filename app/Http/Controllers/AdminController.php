@@ -69,7 +69,7 @@ class AdminController extends Controller
         $data = [
             'title'     => 'Form Biodata',
             'activeMenu' => 'data-diri',
-            'activeSubMenu' => 'biodata'
+            'activeSubMenu' => 'biodata',
         ];
 
         return view('admin.biodata', $data);
@@ -135,7 +135,7 @@ class AdminController extends Controller
         $data = [
             'title'     => 'Tabel Data Kuliah',
             'activeMenu' => 'kelulusan',
-            'activeSubMenu' => 'datatable-kuliah',
+            'activeSubMenu' => 'tabel-kuliah',
             'kuliah'   => Biodata::with('kuliah')->get(),
         ];
 
@@ -147,7 +147,7 @@ class AdminController extends Controller
         $data = [
             'title'     => 'Tabel Data Pekerjaan',
             'activeMenu' => 'kelulusan',
-            'activeSubMenu' => 'datatable-pekerjaan',
+            'activeSubMenu' => 'tabel-pekerjaan',
             'pekerjaan'   => Biodata::with('pekerjaan')->get(),
         ];
 

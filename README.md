@@ -10,6 +10,7 @@ Jadi saya membuat aplikasi ini dengan harapan dapat membantu Guru Bimbingan Kons
    - Home
    - Daftar Lulusan (Datatables)
    - Login Panel Alumni/Lulusan
+   - Login Panel Admin
   
 2. Panel Alumni/Lulusan
    - Dashboard

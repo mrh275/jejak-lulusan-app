@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AlumniController;
+use App\Http\Controllers\DataHandlerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,7 @@ Route::get('/admin/{page}', [AdminController::class, 'page'])->middleware('auth'
 Route::post('/login/auth', [LoginController::class, 'auth']);
 Route::post('/login/alumni', [LoginController::class, 'alumni']);
 Route::get('/logout', [LoginController::class, 'logout']);
+
+// Crud
+Route::resource('/alumni/data', DataHandlerController::class)->middleware('alumni');
+Route::resource('/admin/data', DataHandlerController::class)->middleware('admin');

@@ -49,7 +49,8 @@ class AlumniController extends Controller
         $data = [
             'title'     => 'Form Biodata',
             'activeMenu' => 'data-diri',
-            'activeSubMenu' => 'biodata'
+            'activeSubMenu' => 'biodata',
+            'biodata'   => Biodata::where('nisn', session()->get('nisn'))->first()
         ];
 
         return view('admin.biodata', $data);

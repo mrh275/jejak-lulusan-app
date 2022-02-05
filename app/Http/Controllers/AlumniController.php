@@ -2,19 +2,38 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kuliah;
 use App\Models\Biodata;
+use App\Models\Pekerjaan;
+use App\Models\DataOrangTua;
 use Illuminate\Http\Request;
 
 class AlumniController extends Controller
 {
+
+    public function __construct()
+    {
+        $data = [
+            'notifBio' => Biodata::where('nisn', session()->get('nisn'))->first(),
+            'notifOrangTua' => DataOrangTua::where('nisn_orang_tua', session()->get('nisn'))->first(),
+            'notifKuliah' => Kuliah::where('nisn_kuliah', session()->get('nisn'))->first(),
+            'notifPekerjaan' => Pekerjaan::where('nisn_pekerjaan', session()->get('nisn'))->first(),
+        ];
+
+        return $data;
+    }
+
     public function dashboard()
     {
 
         $data = [
             'title'     => 'Dashboard',
             'activeMenu' => 'dashboard',
-            'activeSubMenu' => ''
+            'activeSubMenu' => '',
+            'notif' => $this->__construct(),
+            'biodata'   => Biodata::where('nisn', session()->get('nisn'))->first(),
         ];
+
 
         return view('admin.dashboard', $data);
     }
@@ -50,7 +69,9 @@ class AlumniController extends Controller
             'title'     => 'Form Biodata',
             'activeMenu' => 'data-diri',
             'activeSubMenu' => 'biodata',
-            'biodata'   => Biodata::where('nisn', session()->get('nisn'))->first()
+            'notif' => $this->__construct(),
+            'biodata'   => Biodata::where('nisn', session()->get('nisn'))->first(),
+
         ];
 
         return view('admin.biodata', $data);
@@ -60,7 +81,10 @@ class AlumniController extends Controller
         $data = [
             'title'     => 'Form Data Orang Tua',
             'activeMenu' => 'data-diri',
-            'activeSubMenu' => 'data-orangtua'
+            'activeSubMenu' => 'data-orangtua',
+            'notif' => $this->__construct(),
+            'biodata'   => Biodata::where('nisn', session()->get('nisn'))->first(),
+            'orangTua' => DataOrangTua::where('nisn_orang_tua', session()->get('nisn'))->first()
         ];
 
         return view('admin.data-orangtua', $data);
@@ -71,7 +95,10 @@ class AlumniController extends Controller
         $data = [
             'title'     => 'Form Data Kuliah',
             'activeMenu' => 'kelulusan',
-            'activeSubMenu' => 'data-kuliah'
+            'activeSubMenu' => 'data-kuliah',
+            'notif' => $this->__construct(),
+            'biodata'  => Biodata::where('nisn', session()->get('nisn'))->first(),
+            'kuliah'   => Kuliah::where('nisn_kuliah', session()->get('nisn'))->first()
         ];
 
         return view('admin.data-kuliah', $data);
@@ -82,7 +109,10 @@ class AlumniController extends Controller
         $data = [
             'title'     => 'Form Data Pekerjaan',
             'activeMenu' => 'kelulusan',
-            'activeSubMenu' => 'data-pekerjaan'
+            'activeSubMenu' => 'data-pekerjaan',
+            'notif' => $this->__construct(),
+            'biodata'  => Biodata::where('nisn', session()->get('nisn'))->first(),
+            'job' => Pekerjaan::where('nisn_pekerjaan', session()->get('nisn'))->first()
         ];
 
         return view('admin.data-pekerjaan', $data);

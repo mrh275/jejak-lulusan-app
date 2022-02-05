@@ -35,7 +35,7 @@
                                     Perempuan
                                 @endif
                             </td>
-                            <td>{{ $bio->kelas }}</td>
+                            <td>{{ Str::upper(str_replace('-', ' ', $bio->kelas)) }}</td>
                             <td>{{ $bio->tahun_lulus }}</td>
                             <td>{{ $bio->status_lulusan }}</td>
                             <td>{{ $bio->kuliah->kampus ?? '-' }}</td>

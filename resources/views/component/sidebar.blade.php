@@ -79,18 +79,36 @@
                     <li>
                         <a href="javascript:void(0)" class="dropdown-link"><span class="link-name-collapse">Data Kelulusan</span></a>
                     </li>
-                    <li>
-                        <a href="{{ isset(Auth::user()->name) ? url('admin') : url('alumni') }}/data-kuliah" id="data-kuliah" class="dropdown-link">
-                            <i class='bx bxs-user-detail'></i>
-                            <span class="dropdown-name">Data Kuliah</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ isset(Auth::user()->name) ? url('admin') : url('alumni') }}/data-pekerjaan" id="data-pekerjaan" class="dropdown-link">
-                            <i class='fa fa-users'></i>
-                            <span class="dropdown-name">Data Pekerjaan</span>
-                        </a>
-                    </li>
+                    @if ($biodata->status_lulusan == 1)
+                        <li>
+                            <a href="{{ isset(Auth::user()->name) ? url('admin') : url('alumni') }}/data-kuliah" id="data-kuliah" class="dropdown-link">
+                                <i class='bx bxs-user-detail'></i>
+                                <span class="dropdown-name">Data Kuliah</span>
+                            </a>
+                        </li>
+                    @elseif ($biodata->status_lulusan == 2)
+                        <li>
+                            <a href="{{ isset(Auth::user()->name) ? url('admin') : url('alumni') }}/data-pekerjaan" id="data-pekerjaan" class="dropdown-link">
+                                <i class='fa fa-users'></i>
+                                <span class="dropdown-name">Data Pekerjaan</span>
+                            </a>
+                        </li>
+                    @elseif ($biodata->status_lulusan == 3)
+                        <li>
+                            <a href="{{ isset(Auth::user()->name) ? url('admin') : url('alumni') }}/data-kuliah" id="data-kuliah" class="dropdown-link">
+                                <i class='bx bxs-user-detail'></i>
+                                <span class="dropdown-name">Data Kuliah</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ isset(Auth::user()->name) ? url('admin') : url('alumni') }}/data-pekerjaan" id="data-pekerjaan" class="dropdown-link">
+                                <i class='fa fa-users'></i>
+                                <span class="dropdown-name">Data Pekerjaan</span>
+                            </a>
+                        </li>
+                    @endif
+
+
                     @can('admin')
                         <li>
                             <a href="{{ url('admin') }}/datatable-kuliah" id="tabel-kuliah" class="dropdown-link">

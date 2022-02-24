@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Biodata;
 use Illuminate\Http\Request;
 
 class BiodataController extends Controller
@@ -68,7 +69,41 @@ class BiodataController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $rules = [
+            'nisn'  => 'required|numeric',
+            'nis'   => 'required|numeric',
+            'nama'  => 'required',
+            'jenis_kelamin' => 'required',
+            'tempat_lahir' => 'required',
+            'kelas' => 'required',
+            'tahun_lulus' => 'required|numeric',
+            'status_lulusan' => 'required|numeric',
+            'alamat' => 'required',
+        ];
+
+        $errorMessage = [
+            'nisn.required' => 'NISN tidak boleh kosong',
+            'nisn.numeric' => 'NISN harus berupa angka',
+            'nis.required' => 'NIS tidak boleh kosong',
+            'nis.numeric' => 'NIS harus berupa angka',
+            'nama.required' => 'Nama tidak boleh kosong',
+            'jenis_kelamin.required' => 'Jenis kelamin tidak boleh kosong',
+            'tempat_lahir.required' => 'Tempat lahir tidak boleh kosong',
+            'kelas.required' => 'Kelas tidak boleh kosong',
+            'tahun_lulus.required' => 'Tahun lulus tidak boleh kosong',
+            'tahun_lulus.numeric' => 'Tahun lulus harus berupa angka',
+            'status_lulusan.required' => 'Status lulusan tidak boleh kosong',
+            'status_lulusan.numeric' => 'Status lulusan harus berupa angka',
+            'alamat.required' => 'Alamat tidak boleh kosong',
+        ];
+
+        $validateBiodata = $request->validate($rules, $errorMessage);
+        $tgl_lahir = str_replace('/', '-', $request->tanggal_lahir);
+        $validateBiodata['tanggal_lahir'] = date('Y-m-d', strtotime($tgl_lahir));
+
+        Biodata::where('nisn', $id)->update($validateBiodata);
+        
+        return redirect('alumni/biodata')->with('success', 'Data berhasil diubah!');
     }
 
     /**

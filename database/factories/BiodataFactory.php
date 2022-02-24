@@ -75,7 +75,7 @@ class BiodataFactory extends Factory
             'tanggal_lahir' => $this->faker->date('Y-m-d'),
             'kelas' => $this->faker->randomElement(['12-ipa-1', '12-ipa-2', '12-ips-1', '12-ips-2']),
             'tahun_lulus' => $this->faker->numberBetween(2014, 2021),
-            'status_lulusan' => $this->faker->randomElement(['Kuliah', 'Kerja']),
+            'status_lulusan' => $this->faker->numberBetween(1, 3),
             'alamat' => $this->faker->address,
         ];
     }

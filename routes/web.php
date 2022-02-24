@@ -5,7 +5,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AlumniController;
+use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\DataHandlerController;
+use Whoops\Run;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +40,5 @@ Route::get('/logout', [LoginController::class, 'logout']);
 // Crud
 Route::resource('/alumni/data', DataHandlerController::class)->middleware('alumni');
 Route::resource('/admin/data', DataHandlerController::class)->middleware('admin');
+// Biodata Crud
+Route::resource('/biodata', BiodataController::class)->middleware('alumni');

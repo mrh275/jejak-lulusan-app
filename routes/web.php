@@ -9,6 +9,7 @@ use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\DataHandlerController;
 use App\Http\Controllers\DataOrangTuaController;
 use App\Http\Controllers\KuliahController;
+use App\Http\Controllers\PekerjaanController;
 use Whoops\Run;
 
 /*
@@ -46,3 +47,4 @@ Route::resource('/admin/data', DataHandlerController::class)->middleware('admin'
 Route::resource('/biodata', BiodataController::class)->middleware('alumni');
 Route::resource('/dataorangtua', DataOrangTuaController::class)->middleware('alumni');
 Route::resource('/kuliah', KuliahController::class)->middleware('alumni');
+Route::resource('/pekerjaan', PekerjaanController::class)->middleware('alumni');

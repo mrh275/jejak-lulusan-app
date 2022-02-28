@@ -17,7 +17,6 @@ class CreateDataOrangTuasTable extends Migration
             $table->id();
             $table->bigInteger('nisn_orang_tua')->unique();
             $table->string('nama_ayah');
-            $table->string('jk_ayah');
             $table->string('tempat_lahir_ayah');
             $table->date('tanggal_lahir_ayah');
             $table->string('pendidikan_ayah');
@@ -25,7 +24,6 @@ class CreateDataOrangTuasTable extends Migration
             $table->string('penghasilan_ayah');
             $table->string('alamat_ayah');
             $table->string('nama_ibu');
-            $table->string('jk_ibu');
             $table->string('tempat_lahir_ibu');
             $table->date('tanggal_lahir_ibu');
             $table->string('pendidikan_ibu');

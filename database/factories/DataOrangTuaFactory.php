@@ -69,7 +69,6 @@ class DataOrangTuaFactory extends Factory
         return [
             'nisn_orang_tua' => $this->faker->unique()->randomElement($dataNISN),
             'nama_ayah' => $this->faker->name('male'),
-            'jk_ayah'   => 'L',
             'tempat_lahir_ayah' => $this->faker->city,
             'tanggal_lahir_ayah' => $this->faker->date('Y-m-d'),
             'pendidikan_ayah' => $this->faker->randomElement(['Tidak Sekolah', 'SD', 'SMP', 'SMA', 'D1', 'D2', 'D3', 'D4', 'S1', 'S2', 'S3']),
@@ -77,7 +76,6 @@ class DataOrangTuaFactory extends Factory
             'penghasilan_ayah' => $this->faker->randomElement(['< Rp. 1.000.000', 'Rp. 1.000.000 - Rp. 3.000.000', 'Rp. 3.000.000 - Rp. 5.000.000', 'Rp. 5.000.000 - Rp. 10.000.000', 'Rp. 10.000.000 - Rp. 20.000.000', '> Rp. 20.000.000']),
             'alamat_ayah' => $this->faker->address,
             'nama_ibu' => $this->faker->name('female'),
-            'jk_ibu'    => 'P',
             'tempat_lahir_ibu' => $this->faker->city,
             'tanggal_lahir_ibu' => $this->faker->date('Y-m-d'),
             'pendidikan_ibu' => $this->faker->randomElement(['Tidak Sekolah', 'SD', 'SMP', 'SMA', 'D1', 'D2', 'D3', 'D4', 'S1', 'S2', 'S3']),

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kuliah;
 use Illuminate\Http\Request;
 
 class KuliahController extends Controller
@@ -34,7 +35,27 @@ class KuliahController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rules = [
+            'kampus' => 'required',
+            'fakultas' => 'required',
+            'jurusan' => 'required',
+            'alamat' => 'required',
+        ];
+
+        $errorMessage = [
+            'kampus.required' => 'Nama Kampus tidak boleh kosong',
+            'fakultas.required' => 'Nama Fakultas tidak boleh kosong',
+            'jurusan.required' => 'Nama Jurusan tidak boleh kosong',
+            'alamat.required' => 'Alamat Kampus tidak boleh kosong',
+        ];
+
+        $validateKuliah = $request->validate($rules, $errorMessage);
+        $validateKuliah['nisn_kuliah'] = $request->nisn_kuliah;
+        $validateKuliah['created_at'] = date('Y-m-d H:i:s');
+
+        Kuliah::insert($validateKuliah);
+        
+        return redirect('alumni/data-kuliah')->with('success', 'Data kuliah berhasil ditambahkan');
     }
 
     /**
@@ -68,7 +89,25 @@ class KuliahController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $rules = [
+            'kampus' => 'required',
+            'fakultas' => 'required',
+            'jurusan' => 'required',
+            'alamat' => 'required',
+        ];
+
+        $errorMessage = [
+            'kampus.required' => 'Nama Kampus tidak boleh kosong',
+            'fakultas.required' => 'Nama Fakultas tidak boleh kosong',
+            'jurusan.required' => 'Nama Jurusan tidak boleh kosong',
+            'alamat.required' => 'Alamat Kampus tidak boleh kosong',
+        ];
+
+        $validateKuliah = $request->validate($rules, $errorMessage);
+
+        Kuliah::where('nisn_kuliah', $id)->update($validateKuliah);
+        
+        return redirect('alumni/data-kuliah')->with('success', 'Data kuliah berhasil diubah');
     }
 
     /**

@@ -4,9 +4,32 @@
     <div class="content">
         <h1 class="content-title">Form Data Kuliah Lulusan</h1>
 
+        @if (session()->has('success'))
+        <div class="alert alert-success">
+            {{ session()->get('success') }}
+        </div>
+        @endif
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <div class="container">
-            <form action="" class="form-group" method="post">
+            @if (isset($kuliah->nisn_kuliah))
+                <form action="{{ url('kuliah/' . $kuliah->nisn_kuliah) }}" class="form-group" method="post">
+                @method('put')
                 @csrf
+            @else
+                <form action="{{ url('kuliah') }}" class="form-group" method="post">
+                    @csrf
+                    <input type="hidden" name="nisn_kuliah" value="{{ session()->get('nisn') }}">
+            @endif
+
                 <div class="form-wrapper">
                     <div class="label-wrapper">
                         <label class="label-form" for="input-nama">Nama Lengkap</label>
@@ -56,7 +79,7 @@
                         <label class="label-form" for="input-kampus">Nama Kampus</label>
                     </div>
                     <div class="input-wrapper">
-                        <input name="kampus" class="form-control" id="input-kampus" value="{{ $kuliah->kampus ?? '' }}">
+                        <input name="kampus" class="form-control" id="input-kampus" value="{{ old('kampus', $kuliah->kampus ?? '') }}">
                     </div>
                 </div>
                 <div class="form-wrapper">
@@ -64,7 +87,7 @@
                         <label class="label-form" for="input-fakultas">Fakultas</label>
                     </div>
                     <div class="input-wrapper">
-                        <input name="fakultas" class="form-control" id="input-fakultas" value="{{ $kuliah->fakultas ?? '' }}">
+                        <input name="fakultas" class="form-control" id="input-fakultas" value="{{ old('fakultas', $kuliah->fakultas ?? '') }}">
                     </div>
                 </div>
                 <div class="form-wrapper">
@@ -72,7 +95,7 @@
                         <label class="label-form" for="input-jurusan">Jurusan/Prodi</label>
                     </div>
                     <div class="input-wrapper">
-                        <input name="jurusan" class="form-control" id="input-jurusan" value="{{ $kuliah->jurusan ?? '' }}">
+                        <input name="jurusan" class="form-control" id="input-jurusan" value="{{ old('jurusan', $kuliah->jurusan ?? '') }}">
                     </div>
                 </div>
                 <div class="form-wrapper">
@@ -80,7 +103,7 @@
                         <label class="label-form" for="input-alamat-kampus">Alamat Kampus</label>
                     </div>
                     <div class="input-wrapper">
-                        <textarea name="alamat-kampus" class="form-control" id="input-alamat-kampus" rows="3">{{ $kuliah->alamat ?? '' }}</textarea>
+                        <textarea name="alamat" class="form-control" id="input-alamat-kampus" rows="3">{{ old('alamat', $kuliah->alamat ?? '') }}</textarea>
                     </div>
                 </div>
 

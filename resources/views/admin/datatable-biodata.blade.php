@@ -28,7 +28,15 @@
                             <td>{{ $bio->tempat_lahir . ', ' . \Carbon\Carbon::parse($bio->tanggal_lahir)->isoFormat('D MMMM Y') }}</td>
                             <td>{{ Str::upper(str_replace('-', ' ', $bio->kelas)) }}</td>
                             <td>{{ $bio->tahun_lulus }}</td>
-                            <td>{{ $bio->status_lulusan }}</td>
+                            <td>
+                            @if ($bio->status_lulusan == 1)
+                                {{ 'Kuliah' }}
+                            @elseif ($bio->status_lulusan == 2)
+                                {{ 'Kerja' }}
+                            @else
+                                {{ 'Kuliah dan Kerja' }}
+                            @endif
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

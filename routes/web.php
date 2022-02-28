@@ -8,6 +8,7 @@ use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\DataHandlerController;
 use App\Http\Controllers\DataOrangTuaController;
+use App\Http\Controllers\KuliahController;
 use Whoops\Run;
 
 /*
@@ -44,3 +45,4 @@ Route::resource('/admin/data', DataHandlerController::class)->middleware('admin'
 // Biodata Crud
 Route::resource('/biodata', BiodataController::class)->middleware('alumni');
 Route::resource('/dataorangtua', DataOrangTuaController::class)->middleware('alumni');
+Route::resource('/kuliah', KuliahController::class)->middleware('alumni');

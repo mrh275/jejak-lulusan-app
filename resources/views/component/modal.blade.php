@@ -87,7 +87,7 @@
                 </div>
                 <div class="form-wrapper">
                     <div class="label-wrapper">
-                        <label class="label-form" for="input-statusLulusan">Status Lulus</label>
+                        <label class="label-form" for="input-statusLulusan">Status Lulusan</label>
                     </div>
                     <div class="input-wrapper">
                         <select name="status_lulusan" id="input_statusLulusan" class="form-control">

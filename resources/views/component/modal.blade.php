@@ -1,14 +1,11 @@
 <div class="modal modal-hide" id="modal" style="z-index: 99">
     <div class="modal-container" style="overflow-y: scroll">
       <div class="modal-card card-xl">
-        <button type="button" id="modal-close" class="modal-close">
-          <i class="fa fa-times" aria-hidden="true"></i>
-        </button>
         <div class="card-header" style="justify-content: start">
-          <h2 style="font-weight: 600; font-size: 1.4rem; color: #334155" >Edit data Siswa</h2>
+          <h2 style="font-weight: 600; font-size: 1.4rem; color: #334155" >Edit data <span class="nama-siswa"></span></h2>
         </div>
         <div class="card-body" style="margin-top: 1rem">
-            <form action="{{ url('/biodata/') }}" class="form-group" method="post">
+            <form action="" class="form-group" method="post">
                 @method('put')
                 @csrf
                 <div class="form-wrapper">
@@ -112,10 +109,75 @@
                 </div>
 
                 <div class="button-wrapper">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="modal-submit" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-secondary" style="margin-left: 10px" id="modal-close">Tutup</button>
                 </div>
             </form>
         </div>
       </div>
     </div>
   </div>
+
+@push('scripts')
+<script>
+    // Modal show toggle
+    let modalButton = document.getElementById("modal-toggle");
+        modalButton.addEventListener("click", function () {
+            let selectedRow = document.querySelector("tr.selected");
+            if(!selectedRow) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Pilih data terlebih dahulu',
+                })
+            } else {
+                let modal = document.getElementById("modal");
+                modal.classList.toggle("modal-hide");
+                modal.classList.toggle("modal-show");
+                let nis = document.querySelector('tr.selected td.nis').getAttributeNode('id').value;
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url : "{{ url('admin/biodata') }}/" + nis + "/edit",
+                    type : 'GET',
+                    dataType : 'json',
+                    success : function(response){
+                        $('#input-nis').val(response.data.nis);
+                        $('#input-nisn').val(response.data.nisn);
+                        $('#input-nama').val(response.data.nama);
+                        $('.nama-siswa').text(response.data.nama);
+                        $('#input-tempatLahir').val(response.data.tempat_lahir);
+                        $('#input-tanggalLahir').val(response.data.tanggal_lahir.split("-").reverse().join("/"));
+                        $('#input-jenisKelamin').val(response.data.jenis_kelamin);
+                        $('#input-kelas').val(response.data.kelas);
+                        $('#input-tahunLulus').val(response.data.tahun_lulus);
+                        $('#input_statusLulusan').val(response.data.status_lulusan);
+                        $('#input-alamat').val(response.data.alamat);
+                    }
+                });
+            }
+        });
+
+        // Modal close toggle
+        let modalClose = document.getElementById("modal-close");
+        modalClose.addEventListener("click", function () {
+            let modal = document.getElementById("modal");
+            modal.classList.toggle("modal-hide");
+            modal.classList.toggle("modal-show");
+            $('#input-nis').val('');
+            $('#input-nisn').val('');
+            $('#input-nama').val('');
+            $('.nama-siswa').text('');
+            $('#input-tempatLahir').val('');
+            $('#input-tanggalLahir').val('');
+            $('#input-jenisKelamin').val('');
+            $('#input-kelas').val('');
+            $('#input-tahunLulus').val('');
+            $('#input_statusLulusan').val('');
+            $('#input-alamat').val('');
+        });
+
+        // Modal submit
+        let modalSubmit = document.getElementById("modal-submit");
+</script>
+@endpush

@@ -1,0 +1,88 @@
+.card-sm {
+    width: 25%;
+    padding: 0.5rem 1rem;
+}
+.card-base {
+    width: 33.333333%;
+}
+.card-lg {
+    width: 50%;
+}
+.card-xl {
+    width: 66.666667%;
+}
+.card-full {
+    width: 100%;
+}
+.card-header {
+    display: flex;
+    justify-content: center;
+}
+.card-body {
+    word-wrap: break-word;
+}
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.5s;
+}
+.modal,
+.modal-container {
+    margin-left: auto;
+    margin-right: auto;
+}
+.modal-container {
+    position: fixed;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+    --tw-bg-opacity: 0.5;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+.modal-hide {
+    visibility: hidden;
+    opacity: 0;
+}
+.modal-show {
+    visibility: visible;
+    opacity: 1;
+}
+.modal-close {
+    position: absolute;
+    left: 75%;
+    margin-left: 5rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    color: rgb(55 65 81 / var(--tw-text-opacity));
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.2s;
+}
+.modal-close,
+.modal-close:hover {
+    --tw-text-opacity: 1;
+}
+.modal-close:hover {
+    color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+.modal-card {
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    border-radius: 0.5rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    padding: 1rem 2rem;
+    --tw-shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a;
+    --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),
+        0 2px 4px -2px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}

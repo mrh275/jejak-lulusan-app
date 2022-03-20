@@ -4,7 +4,7 @@
     <div class="content">
         <h1 class="content-title">Tabel Biodata Lulusan</h1>
 
-        <div>
+        <div style="margin-top: 10px">
             <button class="btn btn-success" id="modal-toggle">Edit</button>
         </div>
 

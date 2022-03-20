@@ -8,7 +8,7 @@
             </h3>
         </div>
         <div class="card-body">
-            <table id="daftar-lulusan" class="daftar-lulusan stripe">
+            <table id="daftar-lulusan" class="daftar-lulusan stripe wrap">
                 <thead>
                     <tr>
                         <td>No</td>
@@ -37,7 +37,9 @@
                             </td>
                             <td>{{ Str::upper(str_replace('-', ' ', $bio->kelas)) }}</td>
                             <td>{{ $bio->tahun_lulus }}</td>
-                            <td>{{ $bio->status_lulusan }}</td>
+                            <td>
+                                {{ ($bio->status_lulusan == 1) ? 'Kuliah' : (($bio->status_lulusan == 2) ? 'Kerja' : 'Kuliah dan Kerja') }}
+                            </td>
                             <td>{{ $bio->kuliah->kampus ?? '-' }}</td>
                             <td>{{ $bio->pekerjaan->nama_perusahaan ?? '-' }}</td>
                         </tr>

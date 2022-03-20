@@ -5,8 +5,7 @@
           <h2 style="font-weight: 600; font-size: 1.4rem; color: #334155" >Edit data <span class="nama-siswa"></span></h2>
         </div>
         <div class="card-body" style="margin-top: 1rem">
-            <form action="" class="form-group" method="post">
-                @method('put')
+            <form action="" class="form-group" id="modal-biodata">
                 @csrf
                 <div class="form-wrapper">
                     <div class="label-wrapper">
@@ -109,7 +108,7 @@
                 </div>
 
                 <div class="button-wrapper">
-                    <button type="submit" class="modal-submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary modal-submit">Submit</button>
                     <button type="button" class="btn btn-secondary" style="margin-left: 10px" id="modal-close">Tutup</button>
                 </div>
             </form>
@@ -178,6 +177,44 @@
         });
 
         // Modal submit
-        let modalSubmit = document.getElementById("modal-submit");
+        $('form#modal-biodata').on('submit', function(e){
+            e.preventDefault();
+            
+            let nis = $('input#input-nis').val();
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url : "{{ url('admin/biodata/update') }}/" + nis ,
+                type : 'GET',
+                data : $(this).serialize(),
+                dataType : 'json',
+                success : function(response){
+                    Swal.fire({
+                        title: 'Sedang menyimpan data...',
+                        didOpen: () => {
+                            Swal.showLoading()
+                        },
+                        timer: 2000,
+                        width: '30rem',
+                    })
+                    .then((dismiss) => {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Data berhasil disimpan',
+                            padding: '1rem',
+                        })
+                        .then((result) => {
+                        if (result.value) {
+                            location.reload();
+                        }
+                    });;
+                    });
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError);
+                }
+            });
+        });
 </script>
 @endpush

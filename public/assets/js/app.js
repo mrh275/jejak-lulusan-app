@@ -17,7 +17,7 @@ document.querySelector(".dropdown").addEventListener("click", function () {
 // Datatables
 $(document).ready(function () {
     let dataLulusan = $("#daftar-lulusan").DataTable({
-        autoWidth: false,
+        autoWidth: true,
         scrollX: true,
         pagingType: "full_numbers",
     });

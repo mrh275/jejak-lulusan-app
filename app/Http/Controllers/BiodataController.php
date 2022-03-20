@@ -57,7 +57,10 @@ class BiodataController extends Controller
      */
     public function edit($id)
     {
-        //
+        $biodata = Biodata::where('nis', $id)->first();
+        return response()->json([
+                'data' => $biodata,
+            ]);
     }
 
     /**

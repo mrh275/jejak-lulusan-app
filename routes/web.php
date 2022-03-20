@@ -48,3 +48,6 @@ Route::resource('/biodata', BiodataController::class)->middleware('alumni');
 Route::resource('/dataorangtua', DataOrangTuaController::class)->middleware('alumni');
 Route::resource('/kuliah', KuliahController::class)->middleware('alumni');
 Route::resource('/pekerjaan', PekerjaanController::class)->middleware('alumni');
+
+// Admin CRUD
+Route::resource('/admin/biodata', BiodataController::class)->middleware('auth');

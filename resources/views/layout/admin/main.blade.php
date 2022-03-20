@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="{{ url('assets/admin/css') }}/page.css">
+    <link rel="stylesheet" href="{{ url('assets/admin/css') }}/components.css">
 
     <!-- Javascript -->
     <script src="{{ url('assets/admin/js') }}/jquery.min.js"></script>
@@ -48,6 +49,8 @@
             @include('component.footer-admin')
         </div>
     </div>
+
+    @include('component.modal')
 
     <!-- Javascript -->
     <script src="{{ url('assets/admin/js') }}/admin.js"></script>
@@ -107,7 +110,10 @@
         $('.table-biodata').on('click', 'button', function(e) {
             e.preventDefault();
         });
+
+        
     </script>
+    @stack('scripts')
 </body>
 
 </html>

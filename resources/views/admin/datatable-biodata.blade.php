@@ -5,7 +5,7 @@
         <h1 class="content-title">Tabel Biodata Lulusan</h1>
 
         <div>
-            <button class="btn btn-primary" id="modal-toggle">Modal</button>
+            <button class="btn btn-success" id="modal-toggle">Edit</button>
         </div>
 
         <div class="container">
@@ -50,36 +50,3 @@
     </div>
 @endsection
 
-@push('scripts')
-<script>
-    // Modal show toggle
-    let modalButton = document.getElementById("modal-toggle");
-        modalButton.addEventListener("click", function () {
-            let modal = document.getElementById("modal");
-            modal.classList.toggle("modal-hide");
-            modal.classList.toggle("modal-show");
-            let nis = document.querySelector('tr.selected td.nis').getAttributeNode('id').value;
-            $.ajax({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                url : "{{ url('admin/biodata') }}/" + nis + "/edit",
-                type : 'GET',
-                dataType : 'json',
-                success : function(response){
-
-                    console.log("===== " + response.data.nama + " =====");
-
-                }
-            });
-        });
-
-        // Modal close toggle
-        let modalClose = document.getElementById("modal-close");
-        modalClose.addEventListener("click", function () {
-            let modal = document.getElementById("modal");
-            modal.classList.toggle("modal-hide");
-            modal.classList.toggle("modal-show");
-        });
-</script>
-@endpush

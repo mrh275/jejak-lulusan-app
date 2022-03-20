@@ -81,7 +81,7 @@
             </span>
 
             <span class="creator">
-                Made with <i class="fa fa-heart" aria-hidden="true"></i> by Muhamad Ramdani Hidayatullah
+                Made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://github.com/muhamadramdani275" class="github" style="text-decoration: underline">Muhamad Ramdani Hidayatullah</i></a>
             </span>
         </div>
     </footer>

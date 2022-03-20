@@ -86,3 +86,11 @@
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
         var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+
+@media (max-width: 768px) {
+    .card-xl {
+        width: 100%;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}

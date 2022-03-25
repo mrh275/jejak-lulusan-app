@@ -51,7 +51,7 @@
         </div>
     </div>
 
-    @include('component.modal')
+    
 
     <!-- Javascript -->
     <script src="{{ url('assets/admin/js') }}/admin.js"></script>

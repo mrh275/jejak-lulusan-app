@@ -50,3 +50,5 @@
     </div>
 @endsection
 
+@include('component.modal-biodata')
+

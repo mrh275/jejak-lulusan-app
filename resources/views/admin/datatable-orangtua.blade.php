@@ -35,3 +35,5 @@
 
     </div>
 @endsection
+
+@include('component.modal-orangtua')

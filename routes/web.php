@@ -1,16 +1,18 @@
 <?php
 
+use Whoops\Run;
+use App\Models\Kelas;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AlumniController;
+use App\Http\Controllers\KuliahController;
 use App\Http\Controllers\BiodataController;
+use App\Http\Controllers\PekerjaanController;
 use App\Http\Controllers\DataHandlerController;
 use App\Http\Controllers\DataOrangTuaController;
-use App\Http\Controllers\KuliahController;
-use App\Http\Controllers\PekerjaanController;
-use Whoops\Run;
+use App\Http\Controllers\ExportLulusanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,3 +66,8 @@ Route::get('/admin/datapekerjaan/update/{nisn}', [PekerjaanController::class, 'u
 
 // Export Route
 Route::get('/export-all', [BiodataController::class, 'exportExcel'])->middleware('auth');
+Route::post('admin/export-angkatan', [ExportLulusanController::class, 'exportAngkatan'])->middleware('auth');
+Route::get('/admin/get-kelas/{id}', function($id) {
+    $kelas = Kelas::where('tahun_lulus', $id)->get();
+    return response()->json($kelas);
+})->middleware('auth');

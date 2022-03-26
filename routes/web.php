@@ -52,3 +52,5 @@ Route::resource('/pekerjaan', PekerjaanController::class)->middleware('alumni');
 // Admin CRUD
 Route::get('/admin/biodata/{nis}/edit', [BiodataController::class, 'edit'])->middleware('auth');
 Route::get('/admin/biodata/update/{nis}', [BiodataController::class, 'updateAjax'])->middleware('auth');
+Route::get('/admin/dataorangtua/{nis}/edit', [DataOrangTuaController::class, 'edit'])->middleware('auth');
+Route::get('/admin/dataorangtua/update/{nisn}', [DataOrangTuaController::class, 'updateAjax'])->middleware('auth');

@@ -54,3 +54,6 @@ Route::get('/admin/biodata/{nis}/edit', [BiodataController::class, 'edit'])->mid
 Route::get('/admin/biodata/update/{nis}', [BiodataController::class, 'updateAjax'])->middleware('auth');
 Route::get('/admin/dataorangtua/{nis}/edit', [DataOrangTuaController::class, 'edit'])->middleware('auth');
 Route::get('/admin/dataorangtua/update/{nisn}', [DataOrangTuaController::class, 'updateAjax'])->middleware('auth');
+
+// Export
+Route::get('/export/excel', [BiodataController::class, 'exportExcel'])->middleware('auth');

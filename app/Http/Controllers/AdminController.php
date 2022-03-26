@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Angkatan;
 use App\Models\Biodata;
 use Illuminate\Http\Request;
 
@@ -64,6 +65,11 @@ class AdminController extends Controller
         // Export Angkatan
         if ($page == 'export-angkatan') {
             return $this->exportAngkatan();
+        }
+
+        // Import Angkatan
+        if ($page == 'import-angkatan') {
+            return $this->importAngkatan();
         }
 
         echo "Page not found";
@@ -163,9 +169,20 @@ class AdminController extends Controller
         $data = [
             'title'     => 'Export Angkatan',
             'activeMenu' => 'export',
-            'activeSubMenu' => 'export-angkatan'
+            'activeSubMenu' => 'export-angkatan',
+            'angkatan'  => Angkatan::all()->sortDesc(),
         ];
 
         return view('admin.export.export-angkatan', $data);
+    }
+
+    public function importAngkatan() {
+        $data = [
+            'title'     => 'Import Angkatan',
+            'activeMenu' => 'export',
+            'activeSubMenu' => 'import-angkatan'
+        ];
+
+        return view('admin.import.import-angkatan', $data);
     }
 }

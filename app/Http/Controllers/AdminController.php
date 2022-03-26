@@ -61,6 +61,11 @@ class AdminController extends Controller
             return $this->tablePekerjaan();
         }
 
+        // Export Angkatan
+        if ($page == 'export-angkatan') {
+            return $this->exportAngkatan();
+        }
+
         echo "Page not found";
     }
 
@@ -152,5 +157,15 @@ class AdminController extends Controller
         ];
 
         return view('admin.datatable-pekerjaan', $data);
+    }
+
+    public function exportAngkatan() {
+        $data = [
+            'title'     => 'Export Angkatan',
+            'activeMenu' => 'export',
+            'activeSubMenu' => 'export-angkatan'
+        ];
+
+        return view('admin.export.export-angkatan', $data);
     }
 }

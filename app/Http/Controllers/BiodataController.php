@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Biodata;
 use Illuminate\Http\Request;
+use App\Exports\ExportLulusan;
+use Maatwebsite\Excel\Facades\Excel;
 
 class BiodataController extends Controller
 {
@@ -160,5 +162,9 @@ class BiodataController extends Controller
         return response()->json([
                 'success' => 'Data berhasil diubah!',
         ]);
+    }
+
+    public function exportExcel() {
+        return Excel::download(new ExportLulusan, 'data-lulusan.xlsx');
     }
 }

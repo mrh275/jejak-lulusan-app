@@ -10,14 +10,25 @@
     <div class="menu-wrapper">
         <ul class="nav-menu">
             <li class="nav-list">
-                <a href="{{ url('alumni') }}" id="dashboard" class="nav-link">
+                
+                @if(!isset(Auth::user()->name))
+                    <a href="{{ url('alumni') }}" id="dashboard" class="nav-link">
+                @else
+                    <a href="{{ url('admin') }}" id="dashboard" class="nav-link">
+                @endif
                     <i class='bx bx-grid-alt'></i>
                     <span class="link-name">Dashboard</span>
                 </a>
                 <ul class="dropdown-blank">
+                    @if(!isset(Auth::user()->name))
                     <li>
                         <a href="{{ url('alumni') }}" class="dropdown-link"><span class="link-name-collapse">Dashboard</span></a>
                     </li>
+                    @else
+                    <li>
+                        <a href="{{ url('admin') }}" class="dropdown-link"><span class="link-name-collapse">Dashboard</span></a>
+                    </li>
+                    @endif
                 </ul>
             </li>
             <li class="nav-list dropdown">

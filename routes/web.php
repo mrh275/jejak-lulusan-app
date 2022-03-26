@@ -23,6 +23,7 @@ use Whoops\Run;
 |
 */
 
+// Portal route
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/daftar-lulusan', [HomeController::class, 'daftarLulusan']);
 Route::get('/login/alumni', [HomeController::class, 'loginAlumni'])->name('login')->middleware('guest');
@@ -36,6 +37,7 @@ Route::get('/alumni/{page}', [AlumniController::class, 'page'])->middleware('alu
 Route::get('/admin', [AdminController::class, 'dashboard'])->middleware('auth');
 Route::get('/admin/{page}', [AdminController::class, 'page'])->middleware('auth');
 
+// Login route
 Route::post('/login/auth', [LoginController::class, 'auth']);
 Route::post('/login/alumni', [LoginController::class, 'alumni']);
 Route::get('/logout', [LoginController::class, 'logout']);
@@ -43,7 +45,8 @@ Route::get('/logout', [LoginController::class, 'logout']);
 // Crud
 Route::resource('/alumni/data', DataHandlerController::class)->middleware('alumni');
 Route::resource('/admin/data', DataHandlerController::class)->middleware('admin');
-// Biodata Crud
+
+// Alumni Crud
 Route::resource('/biodata', BiodataController::class)->middleware('alumni');
 Route::resource('/dataorangtua', DataOrangTuaController::class)->middleware('alumni');
 Route::resource('/kuliah', KuliahController::class)->middleware('alumni');
@@ -54,6 +57,8 @@ Route::get('/admin/biodata/{nis}/edit', [BiodataController::class, 'edit'])->mid
 Route::get('/admin/biodata/update/{nis}', [BiodataController::class, 'updateAjax'])->middleware('auth');
 Route::get('/admin/dataorangtua/{nis}/edit', [DataOrangTuaController::class, 'edit'])->middleware('auth');
 Route::get('/admin/dataorangtua/update/{nisn}', [DataOrangTuaController::class, 'updateAjax'])->middleware('auth');
+Route::get('/admin/datakuliah/{nis}/edit', [KuliahController::class, 'edit'])->middleware('auth');
+Route::get('/admin/datakuliah/update/{nisn}', [KuliahController::class, 'updateAjax'])->middleware('auth');
 
-// Export
+// Export Route
 Route::get('/export/excel', [BiodataController::class, 'exportExcel'])->middleware('auth');

@@ -5,7 +5,7 @@
         <h1 class="content-title">Tabel Data Orang Tua Lulusan</h1>
 
         <div style="margin-top: 10px">
-            <button class="btn btn-success" id="modal-toggle">Edit</button>
+            <button class="btn btn-warning" id="modal-toggle"><i class='bx bxs-edit'></i> Edit</button>
         </div>
 
         <div class="container">

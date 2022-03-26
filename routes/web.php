@@ -63,4 +63,4 @@ Route::get('/admin/datapekerjaan/{nis}/edit', [PekerjaanController::class, 'edit
 Route::get('/admin/datapekerjaan/update/{nisn}', [PekerjaanController::class, 'updateAjax'])->middleware('auth');
 
 // Export Route
-Route::get('/export/excel', [BiodataController::class, 'exportExcel'])->middleware('auth');
+Route::get('/export-all', [BiodataController::class, 'exportExcel'])->middleware('auth');

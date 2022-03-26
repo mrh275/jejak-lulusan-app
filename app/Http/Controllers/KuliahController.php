@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kuliah;
+use App\Models\Biodata;
 use Illuminate\Http\Request;
 
 class KuliahController extends Controller
@@ -77,7 +78,12 @@ class KuliahController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dataKuliah = Kuliah::where('nisn_kuliah', $id)->first();
+        $biodata = Biodata::where('nisn', $id)->first();
+        return response()->json([
+                'biodata'  => $biodata,
+                'kuliah' => $dataKuliah,
+        ]);
     }
 
     /**
@@ -119,5 +125,30 @@ class KuliahController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function updateAjax(Request $request, $nisn)
+    {
+        $rules = [
+            'kampus' => 'required',
+            'fakultas' => 'required',
+            'jurusan' => 'required',
+            'alamat' => 'required',
+        ];
+
+        $errorMessage = [
+            'kampus.required' => 'Nama Kampus tidak boleh kosong',
+            'fakultas.required' => 'Nama Fakultas tidak boleh kosong',
+            'jurusan.required' => 'Nama Jurusan tidak boleh kosong',
+            'alamat.required' => 'Alamat Kampus tidak boleh kosong',
+        ];
+
+        $validateKuliah = $request->validate($rules, $errorMessage);
+
+        Kuliah::where('nisn_kuliah', $nisn)->update($validateKuliah);
+
+        return response()->json([
+                'success' => 'Data berhasil diubah!',
+        ]);
     }
 }

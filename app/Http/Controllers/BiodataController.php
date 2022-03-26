@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ExportAll;
 use App\Models\Biodata;
 use Illuminate\Http\Request;
 use App\Exports\ExportLulusan;
@@ -165,6 +166,6 @@ class BiodataController extends Controller
     }
 
     public function exportExcel() {
-        return Excel::download(new ExportLulusan, 'data-lulusan.xlsx');
+        return Excel::download(new ExportAll, 'data-lulusan-all.xlsx');
     }
 }

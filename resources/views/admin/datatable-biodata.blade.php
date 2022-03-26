@@ -6,7 +6,6 @@
 
         <div style="margin-top: 10px">
             <button type="button" class="btn btn-warning" id="modal-toggle"><i class='bx bxs-edit'></i> Edit</button>
-            <a href="{{ url('/export/excel') }}" class="btn btn-success" id="export-excel"><i class='bx bxs-spreadsheet'></i> Export Excel</a>
         </div>
 
         <div class="container">

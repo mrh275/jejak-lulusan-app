@@ -4,6 +4,10 @@
     <div class="content">
         <h1 class="content-title">Tabel Data Kuliah Lulusan</h1>
 
+        <div style="margin-top: 10px">
+            <button type="button" class="btn btn-warning" id="modal-toggle"><i class='bx bxs-edit'></i> Edit</button>
+        </div>
+
         <div class="container">
             <table class="table-biodata stripe hover">
                 <thead>
@@ -26,7 +30,7 @@
                             <tr>
                                 <td class="number"></td>
                                 <td class="nama">{{ $data->nama }}</td>
-                                <td>{{ $data->nisn }}</td>
+                                <td class="nisn" id="{{ $data->nisn }}">{{ $data->nisn }}</td>
                                 <td>{{ Str::upper(str_replace('-', ' ', $data->kelas)) }}</td>
                                 <td>{{ $data->tahun_lulus }}</td>
                                 <td>{{ $data->kuliah->kampus }}</td>
@@ -41,3 +45,5 @@
 
     </div>
 @endsection
+
+@include('component.modal-kuliah')

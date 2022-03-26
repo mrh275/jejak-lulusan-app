@@ -4,6 +4,10 @@
     <div class="content">
         <h1 class="content-title">Tabel Data Orang Tua Lulusan</h1>
 
+        <div style="margin-top: 10px">
+            <button class="btn btn-success" id="modal-toggle">Edit</button>
+        </div>
+
         <div class="container">
             <table class="table-biodata stripe hover">
                 <thead>
@@ -22,11 +26,11 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td class="nama text-left">{{ $data->nama }}</td>
-                            <td>{{ $data->nisn }}</td>
+                            <td class="nisn" id="{{ $data->nisn }}">{{ $data->nisn }}</td>
                             <td>{{ Str::upper(str_replace('-', ' ', $data->kelas)) }}</td>
                             <td>{{ $data->tahun_lulus }}</td>
-                            <td>{{ $data->dataOrangTua->nama_ayah }}</td>
-                            <td>{{ $data->dataOrangTua->nama_ibu }}</td>
+                            <td>{{ ($data->dataOrangTua->nama_ayah) ?? '' }}</td>
+                            <td>{{ ($data->dataOrangTua->nama_ibu) ?? '' }}</td>
                         </tr>
                     @endforeach
                 </tbody>

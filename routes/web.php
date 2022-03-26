@@ -59,6 +59,8 @@ Route::get('/admin/dataorangtua/{nis}/edit', [DataOrangTuaController::class, 'ed
 Route::get('/admin/dataorangtua/update/{nisn}', [DataOrangTuaController::class, 'updateAjax'])->middleware('auth');
 Route::get('/admin/datakuliah/{nis}/edit', [KuliahController::class, 'edit'])->middleware('auth');
 Route::get('/admin/datakuliah/update/{nisn}', [KuliahController::class, 'updateAjax'])->middleware('auth');
+Route::get('/admin/datapekerjaan/{nis}/edit', [PekerjaanController::class, 'edit'])->middleware('auth');
+Route::get('/admin/datapekerjaan/update/{nisn}', [PekerjaanController::class, 'updateAjax'])->middleware('auth');
 
 // Export Route
 Route::get('/export/excel', [BiodataController::class, 'exportExcel'])->middleware('auth');

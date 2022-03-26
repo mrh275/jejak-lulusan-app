@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Biodata;
 use App\Models\Pekerjaan;
 use Illuminate\Http\Request;
 
@@ -79,7 +80,12 @@ class PekerjaanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dataPekerjaan = Pekerjaan::where('nisn_pekerjaan', $id)->first();
+        $biodata = Biodata::where('nisn', $id)->first();
+        return response()->json([
+                'biodata'  => $biodata,
+                'pekerjaan' => $dataPekerjaan,
+        ]);
     }
 
     /**
@@ -123,5 +129,32 @@ class PekerjaanController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function updateAjax(Request $request, $nisn)
+    {
+        $rules = [
+            'nama_perusahaan' => 'required',
+            'industri'  => 'required',
+            'divisi' => 'required',
+            'jabatan' => 'required',
+            'alamat_perusahaan' => 'required',
+        ];
+
+        $errorMessage = [
+            'nama_perusahaan.required' => 'Nama Perusahaan tidak boleh kosong',
+            'industri.required' => 'Industri tidak boleh kosong',
+            'divisi.required' => 'Divisi tidak boleh kosong',
+            'jabatan.required' => 'Jabatan tidak boleh kosong',
+            'alamat_perusahaan.required' => 'Alamat Perusahaan tidak boleh kosong',
+        ];
+
+        $validatePekerjaan = $request->validate($rules, $errorMessage);
+
+        Pekerjaan::where('nisn_pekerjaan', $nisn)->update($validatePekerjaan);
+
+        return response()->json([
+                'success' => 'Data berhasil diubah!',
+        ]);
     }
 }

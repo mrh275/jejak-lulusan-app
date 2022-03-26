@@ -87,7 +87,7 @@
             <li class="nav-list dropdown">
                 <a class="nav-link" id="kelulusan" href="javascript:void(0)" style="cursor: pointer;">
                     <i class='fa fa-graduation-cap'></i>
-                    <span class="link-name">Data Kelulusan</span>
+                    <span class="link-name" style="margin-left: 28px">Data Kelulusan</span>
                 </a>
                 <ul class="dropdown-menu hide">
                     <li>
@@ -151,6 +151,51 @@
                             <a href="{{ url('admin') }}/datatable-pekerjaan" id="tabel-pekerjaan" class="dropdown-link">
                                 <i class='bx bxs-data'></i>
                                 <span class="dropdown-name">Datatable Pekerjaan</span>
+                            </a>
+                        </li>
+                    @endcan
+                </ul>
+            </li>
+            <li class="nav-list dropdown">
+                <a class="nav-link" id="export" href="javascript:void(0)" style="cursor: pointer;">
+                    <i class='fa fa-download'></i>
+                    <span class="link-name" style="margin-left: 36px">Export</span>
+                </a>
+                <ul class="dropdown-menu hide">
+                    <li>
+                        <a href="javascript:void(0)" class="dropdown-link"><span class="link-name-collapse">Export</span></a>
+                    </li>
+
+                    @can('admin')
+                        <li>
+                            <a href="{{ url('/export-all') }}" id="export-all" class="dropdown-link">
+                                <i class='bx bx-import'></i>
+                                <span class="dropdown-name">Export All</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('admin') }}/export-angkatan" id="export-angkatan" class="dropdown-link">
+                                <i class='bx bx-filter-alt'></i>
+                                <span class="dropdown-name">Export Angkatan</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('admin') }}/import-angkatan" id="import-angkatan" class="dropdown-link">
+                                <i class='bx bx-export'></i>
+                                <span class="dropdown-name">Import Angkatan</span>
+                            </a>
+                        </li>
+                    @elsecan('operator')
+                        <li>
+                            <a href="{{ url('/export-all') }}l" id="export-all" class="dropdown-link">
+                                <i class='bx bxs-file-archive'></i>
+                                <span class="dropdown-name">Export All</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('admin') }}/export-angkatan" id="export-angkatan" class="dropdown-link">
+                                <i class='bx bx-filter-alt'></i>
+                                <span class="dropdown-name">Export Angkatan</span>
                             </a>
                         </li>
                     @endcan

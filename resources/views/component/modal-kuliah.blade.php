@@ -128,7 +128,6 @@
                     type : 'GET',
                     dataType : 'json',
                     success : function(response){
-                        console.log(response);
                         let nama = document.getElementById('input-nama');
                         let nisn = document.getElementById('input-nisn');
                         let kelas = document.getElementById('input-kelas');

@@ -156,6 +156,7 @@
                     @endcan
                 </ul>
             </li>
+            @if(isset(Auth::user()->name))
             <li class="nav-list dropdown">
                 <a class="nav-link" id="export" href="javascript:void(0)" style="cursor: pointer;">
                     <i class='fa fa-download'></i>
@@ -207,6 +208,7 @@
                     @endcan
                 </ul>
             </li>
+            @endif
             @can('admin')
                 <li class="nav-list dropdown">
                     <a href="javascript:void(0)" id="user-manager" class="nav-link">

@@ -2,8 +2,11 @@
 
 use Whoops\Run;
 use App\Models\Kelas;
+use App\Exports\ImportFormatLulusan;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Response;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AlumniController;
@@ -70,4 +73,13 @@ Route::post('admin/export-angkatan', [ExportLulusanController::class, 'exportAng
 Route::get('/admin/get-kelas/{id}', function($id) {
     $kelas = Kelas::where('tahun_lulus', $id)->get();
     return response()->json($kelas);
+})->middleware('auth');
+
+// Import Route
+Route::get('download/format-lulusan', function() {
+    return Excel::download(new ImportFormatLulusan, 'format-import-lulusan.xlsx');
+});
+Route::get('download/format-import', function() {
+    $file = public_path('importLulusan/format-import-lulusan.xlsx');
+    return Response::download($file);
 })->middleware('auth');

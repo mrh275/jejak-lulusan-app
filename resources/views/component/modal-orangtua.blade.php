@@ -182,7 +182,7 @@
                     <div class="input-wrapper">
                         <select name="penghasilan_ibu" id="input-penghasilan-ibu" class="form-control">
                             <option value="">Pilih :</option>
-                            <option value="1" Tidak Berpenghasilan</option>
+                            <option value="1" >Tidak Berpenghasilan</option>
                             <option value="2" >Kurang dari Rp. 1.000.000</option>
                             <option value="3" >Rp. 1.000.000 - Rp. 3.000.000</option>
                             <option value="4" >Rp. 3.000.000 - Rp. 5.000.000</option>

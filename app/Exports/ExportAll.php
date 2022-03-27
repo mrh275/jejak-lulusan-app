@@ -16,10 +16,8 @@ class ExportAll implements FromView, ShouldAutoSize
     public function view(): View
     {
         return view('admin.export.export-excel', [
-            'biodata' => Biodata::all(),
-            'dataorangtua' => DataOrangTua::all(),
-            'datakuliah' => Kuliah::all(),
-            'datapekerjaan' => Pekerjaan::all(),
+            'title' => 'Semua Angkatan',
+            'biodata' => Biodata::with('pekerjaan')->get(),
         ]);
     }
 }

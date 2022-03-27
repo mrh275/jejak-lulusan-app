@@ -112,6 +112,10 @@
             e.preventDefault();
         });
 
+        let closeAlert = document.querySelector("i.close");
+        closeAlert.addEventListener("click", function () {
+          closeAlert.parentElement.style.display = "none";
+        });
         
     </script>
     @stack('scripts')

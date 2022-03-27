@@ -26,6 +26,10 @@
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 
+    @if(isset(Auth::user()->name))
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    @endif
+
     @if (request()->segment(2) === 'biodata' || 'data-orangtua')
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.2.0/dist/css/datepicker.min.css">
         <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.2.0/dist/js/datepicker.min.js"></script>
@@ -55,8 +59,8 @@
 
     <!-- Javascript -->
     <script src="{{ url('assets/admin/js') }}/admin.js"></script>
-    <!-- Enable active class base on window size -->
     <script>
+        // Enable active class base on window size
         if (screen.width < 768) {
             $("#{{ $activeMenu }}").addClass('active-open')
         } else {
@@ -67,6 +71,7 @@
                 $('#{{ $activeMenu }}').next().toggleClass('show')
             @endif
         }
+
         // Datepicker Input Form
         $("input#input-tanggalLahir").on('mousedown', function() {
             const datepicker = new Datepicker(this, {
@@ -112,6 +117,7 @@
             e.preventDefault();
         });
 
+        // Close alert event
         let closeAlert = document.querySelector("i.close");
         closeAlert.addEventListener("click", function () {
           closeAlert.parentElement.style.display = "none";

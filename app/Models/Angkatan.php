@@ -9,5 +9,5 @@ class Angkatan extends Model
 {
     use HasFactory;
 
-    protected $guarded = 'id';
+    protected $guarded = ['id'];
 }

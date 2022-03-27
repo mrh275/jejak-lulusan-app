@@ -6,6 +6,7 @@
         @if (session()->has('success'))
             <div class="alert alert-success">
                 {{ session()->get('success') }}
+                <i class="fa fa-times close"></i>
             </div>
         @endif
         @if ($errors->any())
@@ -15,6 +16,7 @@
                         <li>{{ $error }}</li>
                     @endforeach
                 </ul>
+                <i class="fa fa-times close"></i>
             </div>
         @endif
         @if (session()->has('nisn'))

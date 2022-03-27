@@ -187,7 +187,7 @@
                         </li>
                     @elsecan('operator')
                         <li>
-                            <a href="{{ url('/export-all') }}l" id="export-all" class="dropdown-link">
+                            <a href="{{ url('/export-all') }}" id="export-all" class="dropdown-link">
                                 <i class='bx bxs-file-archive'></i>
                                 <span class="dropdown-name">Export All</span>
                             </a>

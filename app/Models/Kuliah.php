@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Kuliah extends Model
 {
     use HasFactory;
-    protected $guarded = 'id';
+    protected $guarded = ['id'];
 }

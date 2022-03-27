@@ -180,9 +180,9 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url('admin') }}/import-angkatan" id="import-angkatan" class="dropdown-link">
+                            <a href="{{ url('admin') }}/import-lulusan" id="import-lulusan" class="dropdown-link">
                                 <i class='bx bx-export'></i>
-                                <span class="dropdown-name">Import Angkatan</span>
+                                <span class="dropdown-name">Import Lulusan</span>
                             </a>
                         </li>
                     @elsecan('operator')
@@ -196,6 +196,12 @@
                             <a href="{{ url('admin') }}/export-angkatan" id="export-angkatan" class="dropdown-link">
                                 <i class='bx bx-filter-alt'></i>
                                 <span class="dropdown-name">Export Angkatan</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('admin') }}/import-lulusan" id="import-lulusan" class="dropdown-link">
+                                <i class='bx bx-export'></i>
+                                <span class="dropdown-name">Import Lulusan</span>
                             </a>
                         </li>
                     @endcan

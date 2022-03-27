@@ -68,8 +68,8 @@ class AdminController extends Controller
         }
 
         // Import Angkatan
-        if ($page == 'import-angkatan') {
-            return $this->importAngkatan();
+        if ($page == 'import-lulusan') {
+            return $this->importLulusan();
         }
 
         echo "Page not found";
@@ -176,13 +176,13 @@ class AdminController extends Controller
         return view('admin.export.export-angkatan', $data);
     }
 
-    public function importAngkatan() {
+    public function importLulusan() {
         $data = [
-            'title'     => 'Import Angkatan',
+            'title'     => 'Import Lulusan',
             'activeMenu' => 'export',
-            'activeSubMenu' => 'import-angkatan'
+            'activeSubMenu' => 'import-lulusan'
         ];
 
-        return view('admin.import.import-angkatan', $data);
+        return view('admin.import.import-lulusan', $data);
     }
 }

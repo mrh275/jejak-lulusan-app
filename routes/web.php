@@ -83,3 +83,4 @@ Route::get('download/format-import', function() {
     $file = public_path('importLulusan/format-import-lulusan.xlsx');
     return Response::download($file);
 })->middleware('auth');
+Route::post('import/data-lulusan', [ExportLulusanController::class, 'importLulusan'])->middleware('auth');

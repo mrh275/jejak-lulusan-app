@@ -22,10 +22,8 @@ class ExportAngkatan implements FromView, ShouldAutoSize
     public function view(): View
     {
         return view('admin.export.export-excel', [
-            'biodata' => Biodata::where('tahun_lulus', $this->angkatan)->get(),
-            // 'dataorangtua' => DataOrangTua::where('tahun_lulus', $this->angkatan)->get(),
-            // 'datakuliah' => Kuliah::where('tahun_lulus', $this->angkatan)->get(),
-            // 'datapekerjaan' => Pekerjaan::where('tahun_lulus', $this->angkatan)->get(),
+            'title' => $this->angkatan,
+            'biodata' => Biodata::where('tahun_lulus', $this->angkatan)->with(['dataOrangTua', 'kuliah', 'pekerjaan'])->get(),
         ]);
     }
 }

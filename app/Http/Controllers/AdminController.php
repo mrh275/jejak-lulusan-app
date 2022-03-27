@@ -14,7 +14,9 @@ class AdminController extends Controller
         $data = [
             'title'     => 'Dashboard',
             'activeMenu' => 'dashboard',
-            'activeSubMenu' => ''
+            'activeSubMenu' => '',
+            'alumni' => Biodata::all(),
+            'angkatan' => Angkatan::count(),
         ];
 
         return view('admin.dashboard', $data);

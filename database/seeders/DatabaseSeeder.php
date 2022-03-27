@@ -41,9 +41,9 @@ class DatabaseSeeder extends Seeder
         // Biodata::factory(50)->create();
         // Kuliah::factory(38)->create();
         // Pekerjaan::factory(33)->create();
-        // DataOrangTua::factory(50)->create();
+        DataOrangTua::factory(50)->create();
 
-        Angkatan::factory(4)->create();
+        // Angkatan::factory(4)->create();
         // Kelas::factory(5)->create();
     }
 }

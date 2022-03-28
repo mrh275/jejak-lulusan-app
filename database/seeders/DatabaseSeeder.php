@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // // \App\Models\User::factory(10)->create();
+        // \App\Models\User::factory(10)->create();
         // User::create([
         //     'username'  => 'administrator',
         //     'password'  => Hash::make('smanesta'),
@@ -41,9 +41,9 @@ class DatabaseSeeder extends Seeder
         // Biodata::factory(50)->create();
         // Kuliah::factory(38)->create();
         // Pekerjaan::factory(33)->create();
-        DataOrangTua::factory(50)->create();
+        // DataOrangTua::factory(50)->create();
 
         // Angkatan::factory(4)->create();
-        // Kelas::factory(5)->create();
+        Kelas::factory(4)->create();
     }
 }

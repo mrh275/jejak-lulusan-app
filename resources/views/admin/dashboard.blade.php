@@ -4,6 +4,8 @@
     <div class="content">
         <h1 class="content-title">Dashboard</h1>
 
+        @if (isset(Auth::user()->name))
+        @can('auth')
         <div class="header">
             <div class="card post">
                 <div class="card-body">
@@ -89,11 +91,28 @@
 
             </div>
         </div> --}}
+        @endcan
+        @else
+            <div class="container">
+                
+                <h3 style="font-size: 1.5rem; font-weight: 600">Welcome! Alumni.</h3>
+                <h4 style="font-size: 1.2rem; font-weight: 600">Dihalaman dashboard dari Aplikasi Jejak Lulusan SMA Negeri 1 Rawamerta</h4>
+                <img src="{{ url('/assets/img/graduation.svg') }}" style="width:100%; margin-top: 10px; margin-bottom: 10px" alt="Kelulusan">
+                <p style="margin-top: 20px">
+                    Aplikasi ini dibuat untuk menampung data alumni yang lulus dari SMA Negeri 1 Rawamerta. Riwayat temen-temen saat ini sedang kuliah? Sedang mencari pekerjaan? Sedang bekerja? Atau bahkan kerja dan kuliah?
+                </p>
+                <p style="margin-top: 10px">
+                    Semua data mulai dari biodata, data orang tua, data kuliah dan data pekerjaan. Disimpan dalam satu aplikasi dan semua angkatan.
+                </p>
+                <h4 style="font-size: 1.1rem; font-weight: 600; margin-top: 15px">Jangan khawatir! Data temen-temen aman dan tidak akan bisa diakses oleh sembarangan orang, apalagi sampe di stalking sama ayang wkwkwk.</h4>
+            </div>
+        @endif
 
     </div>
 @endsection
 
 @push('scripts')
+    @if (isset(Auth::user()->name))
     <script>
         const labels = [
             2019,
@@ -152,4 +171,5 @@
             config
         );
     </script>
+    @endif
 @endpush    

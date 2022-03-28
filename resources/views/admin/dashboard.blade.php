@@ -9,7 +9,7 @@
                 <div class="card-body">
                     <span class="count-number">{{ count($alumni) }}</span>
                     <h2 class="header-title">Alumni</h2>
-                    <i class='bx bxs-graduation'></i>
+                    <i class='bx bxs-user'></i>
                 </div>
                 <div class="card-footer">
                     <a href="{{ url('admin/datatable-biodata') }}" class="header-readMore">
@@ -22,7 +22,7 @@
                 <div class="card-body">
                     <span class="count-number">{{ $alumni->where('status_lulusan', 1)->count() + $alumni->where('status_lulusan', 3)->count() }}</span>
                     <h2 class="header-title">Kuliah</h2>
-                    <i class='bx bxs-school'></i>
+                    <i class='bx bxs-graduation' ></i>
                 </div>
                 <div class="card-footer">
                     <a href="{{ url('admin/datatable-kuliah') }}" class="header-readMore">
@@ -64,7 +64,7 @@
         <div class="first-container">
             <div class="popular-post-wrapper stat-card">
                 <div class="popular-post-head">
-                    <h3 class="popular-post-title">Popular Post</h3>
+                    <h3 class="popular-post-title">Update Aktifitas</h3>
                 </div>
                 <div class="popular-post-body">
 
@@ -96,14 +96,10 @@
 @push('scripts')
     <script>
         const labels = [
-            2014,
-            2015,
-            2016,
-            2017,
-            2018,
             2019,
             2020,
             2021,
+            2022
         ];
 
         const data = {
@@ -114,14 +110,10 @@
                 backgroundColor: 'rgba(255, 99, 132, 0.5)',
                 borderColor: 'rgba(255, 99, 132, 1)',
                 data: [
-                            {{ $alumni->where('tahun_lulus', 2014)->where('status_lulusan', 1)->count() }},
-                            {{ $alumni->where('tahun_lulus', 2015)->where('status_lulusan', 1)->count() }},
-                            {{ $alumni->where('tahun_lulus', 2016)->where('status_lulusan', 1)->count() }},
-                            {{ $alumni->where('tahun_lulus', 2017)->where('status_lulusan', 1)->count() }},
-                            {{ $alumni->where('tahun_lulus', 2018)->where('status_lulusan', 1)->count() }},
                             {{ $alumni->where('tahun_lulus', 2019)->where('status_lulusan', 1)->count() }},
                             {{ $alumni->where('tahun_lulus', 2020)->where('status_lulusan', 1)->count() }},
                             {{ $alumni->where('tahun_lulus', 2021)->where('status_lulusan', 1)->count() }},
+                            {{ $alumni->where('tahun_lulus', 2022)->where('status_lulusan', 1)->count() }},
                         ],
                 },
                 {
@@ -129,14 +121,10 @@
                 backgroundColor: 'rgba(00, 99, 255, 0.5)',
                 borderColor: 'rgba(00, 99, 255, 1)',
                 data: [
-                        {{ $alumni->where('tahun_lulus', 2014)->where('status_lulusan', 2)->count() }},
-                        {{ $alumni->where('tahun_lulus', 2015)->where('status_lulusan', 2)->count() }}, 
-                        {{ $alumni->where('tahun_lulus', 2016)->where('status_lulusan', 2)->count() }}, 
-                        {{ $alumni->where('tahun_lulus', 2017)->where('status_lulusan', 2)->count() }},
-                        {{ $alumni->where('tahun_lulus', 2018)->where('status_lulusan', 2)->count() }},
                         {{ $alumni->where('tahun_lulus', 2019)->where('status_lulusan', 2)->count() }},
                         {{ $alumni->where('tahun_lulus', 2020)->where('status_lulusan', 2)->count() }},
                         {{ $alumni->where('tahun_lulus', 2021)->where('status_lulusan', 2)->count() }},
+                        {{ $alumni->where('tahun_lulus', 2022)->where('status_lulusan', 2)->count() }},
                     ],
                 },
                 {
@@ -144,14 +132,10 @@
                 backgroundColor: 'rgba(245,158,11,0.5)',
                 borderColor: 'rgba(245,158,11,1)',
                 data: [
-                        {{ $alumni->where('tahun_lulus', 2014)->where('status_lulusan', 3)->count() }},
-                        {{ $alumni->where('tahun_lulus', 2015)->where('status_lulusan', 3)->count() }}, 
-                        {{ $alumni->where('tahun_lulus', 2016)->where('status_lulusan', 3)->count() }}, 
-                        {{ $alumni->where('tahun_lulus', 2017)->where('status_lulusan', 3)->count() }},
-                        {{ $alumni->where('tahun_lulus', 2018)->where('status_lulusan', 3)->count() }},
                         {{ $alumni->where('tahun_lulus', 2019)->where('status_lulusan', 3)->count() }},
                         {{ $alumni->where('tahun_lulus', 2020)->where('status_lulusan', 3)->count() }},
                         {{ $alumni->where('tahun_lulus', 2021)->where('status_lulusan', 3)->count() }},
+                        {{ $alumni->where('tahun_lulus', 2022)->where('status_lulusan', 3)->count() }},
                     ],
                 },
             ]

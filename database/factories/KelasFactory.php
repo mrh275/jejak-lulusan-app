@@ -14,8 +14,8 @@ class KelasFactory extends Factory
     public function definition()
     {
         return [
-            'tahun_lulus' => 2020,
-            'kelas' => $this->faker->unique()->randomElement(['12-ipa-1', '12-ipa-2', '12-ipa-3', '12-ips-1', '12-ips-2']),
+            'tahun_lulus' => 2022,
+            'kelas' => $this->faker->unique()->randomElement(['12-ipa-1', '12-ipa-2', '12-ips-1', '12-ips-2']),
         ];
     }
 }

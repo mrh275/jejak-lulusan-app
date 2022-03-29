@@ -16,7 +16,7 @@ class ImportLulusan implements ToModel, WithHeadingRow
     {
         $data = [
             'biodata' => new Biodata([
-                'nisn' => $row['nisn'],
+                'nisn' => (string)$row['nisn'],
                 'nis' => $row['nis'],
                 'nama' => $row['nama'],
                 'jenis_kelamin' => $row['jenis_kelamin'],
@@ -28,7 +28,7 @@ class ImportLulusan implements ToModel, WithHeadingRow
                 'alamat' => $row['alamat'],
             ]),
             'dataorangtua' => new DataOrangTua([
-                'nisn_orang_tua' => $row['nisn'],
+                'nisn_orang_tua' => (string)$row['nisn'],
                 'nama_ayah' => $row['nama_ayah'],
                 'tempat_lahir_ayah' => $row['tempat_lahir_ayah'],
                 'tanggal_lahir_ayah' => date("Y-m-d", strtotime($row['tanggal_lahir_ayah'])),
@@ -45,14 +45,14 @@ class ImportLulusan implements ToModel, WithHeadingRow
                 'alamat_ibu' => $row['alamat_ibu'],
             ]),
             'kuliah' => new Kuliah([
-                'nisn_kuliah' => $row['nisn'],
+                'nisn_kuliah' => (string)$row['nisn'],
                 'kampus' => $row['nama_kampus'],
                 'fakultas' => $row['fakultas'],
                 'jurusan' => $row['jurusan'],
                 'alamat' => $row['alamat'],
             ]),
             'pekerjaan' => new Pekerjaan([
-                'nisn_pekerjaan' => $row['nisn'],
+                'nisn_pekerjaan' => (string)$row['nisn'],
                 'nama_perusahaan' => $row['nama_perusahaan'],
                 'industri' => $row['industri'],
                 'divisi' => $row['divisi'],

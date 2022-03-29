@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $title }} | Admin Semesta</title>
 
-    <link rel="shortcut icon" href="{{ url('assets') }}/img/favicon.png" type="image/x-icon">
+    <!--Favicon-->
+    <link rel="icon" type="image/png" href="{{ url('assets/img/favicon.png') }}" />
 
     <!-- CSS -->
     <link rel="stylesheet" href="{{ url('assets/admin/css') }}/admin.css">

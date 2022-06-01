@@ -7,29 +7,39 @@ Jadi saya membuat aplikasi ini dengan harapan dapat membantu Guru Bimbingan Kons
 
 ## Preview
 
-![Home](https://muhamadramdani275.github.io/assets/img/project/jejak-lulusan-thumb.png)
-
-![Page 1](https://muhamadramdani275.github.io/assets/img/project/jejak-lulusan/jejak-lulusan-1.png)
-
-![Page 2](https://muhamadramdani275.github.io/assets/img/project/jejak-lulusan/jejak-lulusan-1.png)
-
-![Page 3](https://muhamadramdani275.github.io/assets/img/project/jejak-lulusan/jejak-lulusan-1.png)
-
-![Page 4](https://muhamadramdani275.github.io/assets/img/project/jejak-lulusan/jejak-lulusan-1.png)
-
-![Page 5](https://muhamadramdani275.github.io/assets/img/project/jejak-lulusan/jejak-lulusan-1.png)
-
-![Page 6](https://muhamadramdani275.github.io/assets/img/project/jejak-lulusan/jejak-lulusan-1.png)
-
-![Page 7](https://muhamadramdani275.github.io/assets/img/project/jejak-lulusan/jejak-lulusan-1.png)
-
-![Page 8](https://muhamadramdani275.github.io/assets/img/project/jejak-lulusan/jejak-lulusan-1.png)
-
-![Page 9](https://muhamadramdani275.github.io/assets/img/project/jejak-lulusan/jejak-lulusan-1.png)
-
-![Page 10](https://muhamadramdani275.github.io/assets/img/project/jejak-lulusan/jejak-lulusan-1.png)
-
-![Page 11](https://muhamadramdani275.github.io/assets/img/project/jejak-lulusan/jejak-lulusan-1.png)
+<p align="center">
+  <img width="460" height="300" src="https://muhamadramdani275.github.io/assets/img/project/jejak-lulusan/jejak-lulusan-1.png">
+</p>
+<p align="center">
+  <img width="460" height="300" src="https://muhamadramdani275.github.io/assets/img/project/jejak-lulusan/jejak-lulusan-1.png">
+</p>
+<p align="center">
+  <img width="460" height="300" src="https://muhamadramdani275.github.io/assets/img/project/jejak-lulusan/jejak-lulusan-1.png">
+</p>
+<p align="center">
+  <img width="460" height="300" src="https://muhamadramdani275.github.io/assets/img/project/jejak-lulusan/jejak-lulusan-1.png">
+</p>
+<p align="center">
+  <img width="460" height="300" src="https://muhamadramdani275.github.io/assets/img/project/jejak-lulusan/jejak-lulusan-1.png">
+</p>
+<p align="center">
+  <img width="460" height="300" src="https://muhamadramdani275.github.io/assets/img/project/jejak-lulusan/jejak-lulusan-1.png">
+</p>
+<p align="center">
+  <img width="460" height="300" src="https://muhamadramdani275.github.io/assets/img/project/jejak-lulusan/jejak-lulusan-1.png">
+</p>
+<p align="center">
+  <img width="460" height="300" src="https://muhamadramdani275.github.io/assets/img/project/jejak-lulusan/jejak-lulusan-1.png">
+</p>
+<p align="center">
+  <img width="460" height="300" src="https://muhamadramdani275.github.io/assets/img/project/jejak-lulusan/jejak-lulusan-1.png">
+</p>
+<p align="center">
+  <img width="460" height="300" src="https://muhamadramdani275.github.io/assets/img/project/jejak-lulusan/jejak-lulusan-1.png">
+</p>
+<p align="center">
+  <img width="460" height="300" src="https://muhamadramdani275.github.io/assets/img/project/jejak-lulusan/jejak-lulusan-1.png">
+</p>
 
 ## Fitur aplikasi
 

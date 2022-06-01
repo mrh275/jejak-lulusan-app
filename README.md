@@ -5,7 +5,7 @@
 Aplikasi ini dibuat berdasarkan studi kasus pada sekolah tempat saya bekerja. Karena minimnya tenaga administrasi sehingga kesulitan jika harus melakukan penelusuran dan pendataan jejak lulusan dan alumni secara langsung.
 Jadi saya membuat aplikasi ini dengan harapan dapat membantu Guru Bimbingan Konseling (BK) untuk melakukan penelusuran dan pendataan jejak lulusan dan alumni secara daring.
 
-## Preview
+## Preview Aplikasi
 
 <p align="center">
   <img width="640" src="https://muhamadramdani275.github.io/assets/img/project/jejak-lulusan/jejak-lulusan-1.png">

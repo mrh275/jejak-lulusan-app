@@ -675,6 +675,13 @@ ul.nav-dropdown a.nav-drop-link .nav-drop-name {
 hr.nav-drop-separator {
     border-top: 2px solid #5b5d6370;
 }
+.show-password-wrapper {
+    display: flex;
+    align-items: center;
+}
+.show-password {
+    font-size: 0.8rem;
+}
 @media (max-width: 767px) {
     .main-container,
     .main-container.expand {

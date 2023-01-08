@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $title }} | Admin Semesta</title>
+    <title>{{ $title }} | Jejak Lulusan</title>
 
     <!--Favicon-->
     <link rel="icon" type="image/png" href="{{ url('assets/img/favicon.png') }}" />
@@ -27,7 +27,7 @@
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 
-    @if(isset(Auth::user()->name))
+    @if (isset(Auth::user()->name))
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     @endif
 
@@ -56,7 +56,7 @@
         </div>
     </div>
 
-    
+
 
     <!-- Javascript -->
     <script src="{{ url('assets/admin/js') }}/admin.js"></script>
@@ -120,10 +120,9 @@
 
         // Close alert event
         let closeAlert = document.querySelector("i.close");
-        closeAlert.addEventListener("click", function () {
-          closeAlert.parentElement.style.display = "none";
+        closeAlert.addEventListener("click", function() {
+            closeAlert.parentElement.style.display = "none";
         });
-        
     </script>
     @stack('scripts')
 </body>

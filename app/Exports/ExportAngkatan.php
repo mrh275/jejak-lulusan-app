@@ -2,13 +2,9 @@
 
 namespace App\Exports;
 
-use App\Models\Kuliah;
 use App\Models\Biodata;
-use App\Models\Pekerjaan;
-use App\Models\DataOrangTua;
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;
-use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 
 class ExportAngkatan implements FromView, ShouldAutoSize

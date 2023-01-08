@@ -85,7 +85,3 @@ Route::get('download/format-import', function () {
     return Response::download($file);
 })->middleware('auth');
 Route::post('import/data-lulusan', [ExportLulusanController::class, 'importLulusan'])->middleware('auth');
-
-
-// User Route
-Route::get('admin/user-account', [UserController::class, 'userAccount'])->middleware('auth');

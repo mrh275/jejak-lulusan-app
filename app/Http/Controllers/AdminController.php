@@ -73,6 +73,10 @@ class AdminController extends Controller
         if ($page == 'import-lulusan') {
             return $this->importLulusan();
         }
+        // User Account
+        if ($page == 'user-account') {
+            return $this->userAccount();
+        }
 
         echo "Page not found";
     }
@@ -167,7 +171,8 @@ class AdminController extends Controller
         return view('admin.datatable-pekerjaan', $data);
     }
 
-    public function exportAngkatan() {
+    public function exportAngkatan()
+    {
         $data = [
             'title'     => 'Export Angkatan',
             'activeMenu' => 'export',
@@ -178,7 +183,8 @@ class AdminController extends Controller
         return view('admin.export.export-angkatan', $data);
     }
 
-    public function importLulusan() {
+    public function importLulusan()
+    {
         $data = [
             'title'     => 'Import Lulusan',
             'activeMenu' => 'export',
@@ -186,5 +192,16 @@ class AdminController extends Controller
         ];
 
         return view('admin.import.import-lulusan', $data);
+    }
+
+    public function userAccount()
+    {
+        $data = [
+            'title'     => 'Ubah Akun',
+            'activeMenu' => 'user-manager',
+            'activeSubMenu' => 'user-account'
+        ];
+
+        return view('admin.user-account', $data);
     }
 }

@@ -16,6 +16,7 @@ use App\Http\Controllers\PekerjaanController;
 use App\Http\Controllers\DataHandlerController;
 use App\Http\Controllers\DataOrangTuaController;
 use App\Http\Controllers\ExportLulusanController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,28 +60,32 @@ Route::resource('/pekerjaan', PekerjaanController::class)->middleware('alumni');
 
 // Admin CRUD
 Route::get('/admin/biodata/{nis}/edit', [BiodataController::class, 'edit'])->middleware('auth');
-Route::get('/admin/biodata/update/{nis}', [BiodataController::class, 'updateAjax'])->middleware('auth');
+Route::post('/admin/biodata/update/{nis}', [BiodataController::class, 'updateAjax'])->middleware('auth');
 Route::get('/admin/dataorangtua/{nis}/edit', [DataOrangTuaController::class, 'edit'])->middleware('auth');
-Route::get('/admin/dataorangtua/update/{nisn}', [DataOrangTuaController::class, 'updateAjax'])->middleware('auth');
+Route::post('/admin/dataorangtua/update/{nisn}', [DataOrangTuaController::class, 'updateAjax'])->middleware('auth');
 Route::get('/admin/datakuliah/{nis}/edit', [KuliahController::class, 'edit'])->middleware('auth');
-Route::get('/admin/datakuliah/update/{nisn}', [KuliahController::class, 'updateAjax'])->middleware('auth');
+Route::post('/admin/datakuliah/update/{nisn}', [KuliahController::class, 'updateAjax'])->middleware('auth');
 Route::get('/admin/datapekerjaan/{nis}/edit', [PekerjaanController::class, 'edit'])->middleware('auth');
-Route::get('/admin/datapekerjaan/update/{nisn}', [PekerjaanController::class, 'updateAjax'])->middleware('auth');
+Route::post('/admin/datapekerjaan/update/{nisn}', [PekerjaanController::class, 'updateAjax'])->middleware('auth');
 
 // Export Route
 Route::get('/export-all', [BiodataController::class, 'exportExcel'])->middleware('auth');
 Route::post('admin/export-angkatan', [ExportLulusanController::class, 'exportAngkatan'])->middleware('auth');
-Route::get('/admin/get-kelas/{id}', function($id) {
+Route::get('/admin/get-kelas/{id}', function ($id) {
     $kelas = Kelas::where('tahun_lulus', $id)->get();
     return response()->json($kelas);
 })->middleware('auth');
 
 // Import Route
-Route::get('download/format-lulusan', function() {
+Route::get('download/format-lulusan', function () {
     return Excel::download(new ImportFormatLulusan, 'format-import-lulusan.xlsx');
-});
-Route::get('download/format-import', function() {
+})->middleware('auth');
+Route::get('download/format-import', function () {
     $file = public_path('importLulusan/format-import-lulusan.xlsx');
     return Response::download($file);
 })->middleware('auth');
 Route::post('import/data-lulusan', [ExportLulusanController::class, 'importLulusan'])->middleware('auth');
+
+
+// User Route
+Route::get('admin/user-account', [UserController::class, 'userAccount'])->middleware('auth');

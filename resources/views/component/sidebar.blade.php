@@ -220,7 +220,7 @@
                             <a href="javascript:void(0)" class="dropdown-link"><span class="link-name-collapse">User Manager</span></a>
                         </li>
                         <li>
-                            <a href="{{ url('admin/user-account') }}" id="edit-akun" class="dropdown-link">
+                            <a href="{{ url('admin/user-account') }}" id="user-account" class="dropdown-link">
                                 <i class='bx bxs-user'></i>
                                 <span class="dropdown-name">Edit Akun</span>
                             </a>
@@ -229,13 +229,6 @@
                             <a href="./ubah-password.html" id="ubah-password" class="dropdown-link">
                                 <i class='bx bxs-key'></i>
                                 <span class="dropdown-name">Ubah Password</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="./user.html" id="user-account" class="dropdown-link">
-                                <i class='bx bxs-user-account'></i>
-                                <span class="dropdown-name">User Account</span>
                             </a>
                         </li>
                         <li>

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Angkatan;
+use App\Models\User;
 use App\Models\Biodata;
+use App\Models\Angkatan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -199,7 +201,8 @@ class AdminController extends Controller
         $data = [
             'title'     => 'Ubah Akun',
             'activeMenu' => 'user-manager',
-            'activeSubMenu' => 'user-account'
+            'activeSubMenu' => 'user-account',
+            'user' => User::where('username', 'administrator')->first()
         ];
 
         return view('admin.user-account', $data);

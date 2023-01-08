@@ -67,6 +67,7 @@ Route::get('/admin/datakuliah/{nis}/edit', [KuliahController::class, 'edit'])->m
 Route::post('/admin/datakuliah/update/{nisn}', [KuliahController::class, 'updateAjax'])->middleware('auth');
 Route::get('/admin/datapekerjaan/{nis}/edit', [PekerjaanController::class, 'edit'])->middleware('auth');
 Route::post('/admin/datapekerjaan/update/{nisn}', [PekerjaanController::class, 'updateAjax'])->middleware('auth');
+Route::post('/admin/user/update', [UserController::class, 'updateAccount'])->middleware('auth');
 
 // Export Route
 Route::get('/export-all', [BiodataController::class, 'exportExcel'])->middleware('auth');

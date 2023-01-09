@@ -34,16 +34,18 @@
                     <div class="label-wrapper">
                         <label class="label-form" for="input-password">Password</label>
                     </div>
-                    <div class="input-wrapper">
-                        <input type="password" name="password" class="form-control" id="input-password" value="{{ $user->password }}">
+                    <div class="input-wrapper" style="display: block">
+                        <input type="password" name="password" class="form-control" id="input-password">
+                        <small>Leave it blank if you don't want to change your password!</small>
                     </div>
                 </div>
                 <div class="form-wrapper">
                     <div class="label-wrapper">
                         <label class="label-form" for="input-password">Confirm Password</label>
                     </div>
-                    <div class="input-wrapper">
+                    <div class="input-wrapper" style="display: block">
                         <input type="password" name="password-confirm" class="form-control" id="password-confirm">
+                        <small>Leave it blank if you don't want to change your password!</small>
                     </div>
                 </div>
                 <div class="form-wrapper">

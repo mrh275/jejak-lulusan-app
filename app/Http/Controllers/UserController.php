@@ -12,49 +12,17 @@ class UserController extends Controller
 {
     public function updateAccount(Request $request)
     {
-        if ($request->input('username') == Auth::user()->username) {
-            $rules = [
-                'username' => 'required|min:8',
-                'password' => 'min:8|alpha_num',
-                'name' => 'required|min:3',
-                'email' => 'required|email'
-            ];
-            $errorMessage = [
-                'username.required' => 'Username tidak boleh kosong',
-                'name.required' => 'Nama tidak boleh kosong',
-                'email.required' => 'Email tidak boleh kosong',
-                'username.min' => 'Minimal wajib 8 karakter',
-                'password.min' => 'Minimal wajib 8 karakter',
-                'name.min' => 'Minimal wajib 3 karakter',
-                'password.alpha_num' => 'Kata sandi harus gabungan huruf dan angka',
-                'email.email' => 'Harap masukan email yang valid'
-            ];
-        } else {
-            $rules = [
-                'username' => 'required|min:8|unique:users',
-                'password' => 'min:8|alpha_num',
-                'name' => 'required|min:3',
-                'email' => 'required|email'
-            ];
-            $errorMessage = [
-                'username.required' => 'Username tidak boleh kosong',
-                'name.required' => 'Nama tidak boleh kosong',
-                'email.required' => 'Email tidak boleh kosong',
-                'username.min' => 'Minimal wajib 8 karakter',
-                'password.min' => 'Minimal wajib 8 karakter',
-                'name.min' => 'Minimal wajib 3 karakter',
-                'username.unique' => 'Username sudah digunakan',
-                'password.alpha_num' => 'Kata sandi harus gabungan huruf dan angka',
-                'email.email' => 'Harap masukan email yang valid'
-            ];
-        }
+        $data = [
+            'username' => ($request->input('username') == Auth::user()->username) ? Auth::user()->username : $request->input('username'),
+            'name' => ($request->input('name') == Auth::user()->name) ? Auth::user()->name : $request->input('name'),
+            'email' => ($request->input('email') == Auth::user()->email) ? Auth::user()->email : $request->input('email'),
+        ];
 
-
-        $credentials = $request->validate($rules, $errorMessage);
-        if ($request->input('password') != null) {
-            if ($credentials['password'] == $request->input('password-confirm')) {
+        if ($request->input('password')) {
+            if ($request->input('password') == $request->input('password-confirm')) {
+                $data['password'] = Hash::make($request->input('password'));
                 try {
-                    User::where('username', $credentials['username'])->update($credentials);
+                    User::where('username', $data['username'])->update($data);
                     return response()->json([
                         'success' => 'Akun berhasil diperbaharui!'
                     ]);
@@ -66,8 +34,7 @@ class UserController extends Controller
             }
         } else {
             try {
-                unset($credentials['password']);
-                User::where('username', $credentials['username'])->update($credentials);
+                User::where('username', $data['username'])->update($data);
                 return response()->json([
                     'success' => 'Akun berhasil diperbaharui!'
                 ]);

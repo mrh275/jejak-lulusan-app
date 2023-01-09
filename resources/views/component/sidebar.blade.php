@@ -226,12 +226,6 @@
                             </a>
                         </li>
                         <li>
-                            <a href="./ubah-password.html" id="ubah-password" class="dropdown-link">
-                                <i class='bx bxs-key'></i>
-                                <span class="dropdown-name">Ubah Password</span>
-                            </a>
-                        </li>
-                        <li>
                             <a href="./user-role.html" id="user-role" class="dropdown-link">
                                 <i class='bx bxs-user-detail'></i>
                                 <span class="dropdown-name">User Role</span>

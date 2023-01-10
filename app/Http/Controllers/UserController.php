@@ -45,4 +45,24 @@ class UserController extends Controller
             }
         }
     }
+
+    public function updateRole($id, Request $request)
+    {
+        $data = [
+            'is_admin' => $request->input('role')
+        ];
+
+        try {
+            User::where('username', $id)->update($data);
+            return response()->json([
+                'status' => 200,
+                'message' => 'Data berhasil diperbaharui'
+            ]);
+        } catch (Exception $error) {
+            return response()->json([
+                'status' => $error->getCode(),
+                'error' => $error->getMessage()
+            ]);
+        }
+    }
 }

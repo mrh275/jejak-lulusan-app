@@ -44,7 +44,7 @@
                 let modal = document.getElementById("modal");
                 modal.classList.toggle("modal-hide");
                 modal.classList.toggle("modal-show");
-                let role = document.querySelector('tr.selected td[id]').getAttributeNode('id').value;
+                const role = document.querySelector('tr.selected td#role').getAttributeNode('class').value;
                 const roleInput = document.getElementById('input-role');
                 // console.log(roleInput.querySelector('option[value="1"]'));
                 if (role == 1) {
@@ -70,12 +70,13 @@
         $('form#modal-biodata').on('submit', function(e) {
             e.preventDefault();
 
-            let nis = $('input#input-nis').val();
+            const username = document.querySelector('tr.selected td#username').getAttributeNode('class').value;
+
             $.ajax({
                 headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    'X-CSRF-TOKEN': $('input[name="_token"]').val()
                 },
-                url: "{{ url('admin/biodata/update') }}/" + nis,
+                url: "{{ url('admin/role/update') }}/" + username,
                 type: 'POST',
                 data: $(this).serialize(),
                 dataType: 'json',

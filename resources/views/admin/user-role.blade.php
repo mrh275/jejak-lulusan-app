@@ -22,9 +22,9 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $item->name }}</td>
-                            <td>{{ $item->username }}</td>
+                            <td id="username" class="{{ $item->username }}">{{ $item->username }}</td>
                             <td>{{ $item->email }}</td>
-                            <td id="{{ $item->is_admin }}">{{ $item->is_admin == 1 ? 'Admin' : 'User' }}</td>
+                            <td id="role" class="{{ $item->is_admin }}">{{ $item->is_admin == 1 ? 'Admin' : 'User' }}</td>
                         </tr>
                     @endforeach
                 </tbody>

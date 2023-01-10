@@ -79,6 +79,10 @@ class AdminController extends Controller
         if ($page == 'user-account') {
             return $this->userAccount();
         }
+        // User Account
+        if ($page == 'user-role') {
+            return $this->userRole();
+        }
 
         echo "Page not found";
     }
@@ -206,5 +210,16 @@ class AdminController extends Controller
         ];
 
         return view('admin.user-account', $data);
+    }
+    public function userRole()
+    {
+        $data = [
+            'title'     => 'User Role',
+            'activeMenu' => 'user-manager',
+            'activeSubMenu' => 'user-role',
+            'user' => User::all()
+        ];
+
+        return view('admin.user-role', $data);
     }
 }

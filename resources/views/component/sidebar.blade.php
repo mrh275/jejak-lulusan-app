@@ -226,7 +226,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="./user-role.html" id="user-role" class="dropdown-link">
+                            <a href="{{ url('admin/user-role') }}" id="user-role" class="dropdown-link">
                                 <i class='bx bxs-user-detail'></i>
                                 <span class="dropdown-name">User Role</span>
                             </a>

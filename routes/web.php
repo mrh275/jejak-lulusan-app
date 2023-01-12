@@ -30,7 +30,7 @@ use App\Http\Controllers\UserController;
 */
 
 // Portal route
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/daftar-lulusan', [HomeController::class, 'daftarLulusan']);
 Route::get('/login/alumni', [HomeController::class, 'loginAlumni'])->name('login')->middleware('guest');
 Route::get('/login/admin', [HomeController::class, 'loginAdmin'])->middleware('guest');
@@ -38,10 +38,6 @@ Route::get('/login/admin', [HomeController::class, 'loginAdmin'])->middleware('g
 // Alumni Route
 Route::get('/alumni', [AlumniController::class, 'dashboard'])->middleware('alumni');
 Route::get('/alumni/{page}', [AlumniController::class, 'page'])->middleware('alumni');
-
-// Admin Route
-Route::get('/admin', [AdminController::class, 'dashboard'])->middleware('auth');
-Route::get('/admin/{page}', [AdminController::class, 'page'])->middleware('auth');
 
 // Login route
 Route::post('/login/auth', [LoginController::class, 'auth']);
@@ -58,32 +54,38 @@ Route::resource('/dataorangtua', DataOrangTuaController::class)->middleware('alu
 Route::resource('/kuliah', KuliahController::class)->middleware('alumni');
 Route::resource('/pekerjaan', PekerjaanController::class)->middleware('alumni');
 
-// Admin CRUD
-Route::get('/admin/biodata/{nis}/edit', [BiodataController::class, 'edit'])->middleware('auth');
-Route::post('/admin/biodata/update/{nis}', [BiodataController::class, 'updateAjax'])->middleware('auth');
-Route::get('/admin/dataorangtua/{nis}/edit', [DataOrangTuaController::class, 'edit'])->middleware('auth');
-Route::post('/admin/dataorangtua/update/{nisn}', [DataOrangTuaController::class, 'updateAjax'])->middleware('auth');
-Route::get('/admin/datakuliah/{nis}/edit', [KuliahController::class, 'edit'])->middleware('auth');
-Route::post('/admin/datakuliah/update/{nisn}', [KuliahController::class, 'updateAjax'])->middleware('auth');
-Route::get('/admin/datapekerjaan/{nis}/edit', [PekerjaanController::class, 'edit'])->middleware('auth');
-Route::post('/admin/datapekerjaan/update/{nisn}', [PekerjaanController::class, 'updateAjax'])->middleware('auth');
-Route::post('/admin/user/update', [UserController::class, 'updateAccount'])->middleware('auth');
-Route::post('/admin/role/update/{username}', [UserController::class, 'updateRole'])->middleware('auth');
+Route::middleware(['auth', 'admin'])->group(function () {
+    // Admin Route
+    Route::get('/admin', [AdminController::class, 'dashboard']);
+    Route::get('/admin/{page}', [AdminController::class, 'page']);
 
-// Export Route
-Route::get('/export-all', [BiodataController::class, 'exportExcel'])->middleware('auth');
-Route::post('admin/export-angkatan', [ExportLulusanController::class, 'exportAngkatan'])->middleware('auth');
-Route::get('/admin/get-kelas/{id}', function ($id) {
-    $kelas = Kelas::where('tahun_lulus', $id)->get();
-    return response()->json($kelas);
-})->middleware('auth');
+    // Admin CRUD
+    Route::get('/admin/biodata/{nis}/edit', [BiodataController::class, 'edit']);
+    Route::post('/admin/biodata/update/{nis}', [BiodataController::class, 'updateAjax']);
+    Route::get('/admin/dataorangtua/{nis}/edit', [DataOrangTuaController::class, 'edit']);
+    Route::post('/admin/dataorangtua/update/{nisn}', [DataOrangTuaController::class, 'updateAjax']);
+    Route::get('/admin/datakuliah/{nis}/edit', [KuliahController::class, 'edit']);
+    Route::post('/admin/datakuliah/update/{nisn}', [KuliahController::class, 'updateAjax']);
+    Route::get('/admin/datapekerjaan/{nis}/edit', [PekerjaanController::class, 'edit']);
+    Route::post('/admin/datapekerjaan/update/{nisn}', [PekerjaanController::class, 'updateAjax']);
+    Route::post('/admin/user/update', [UserController::class, 'updateAccount']);
+    Route::post('/admin/role/update/{username}', [UserController::class, 'updateRole']);
 
-// Import Route
-Route::get('download/format-lulusan', function () {
-    return Excel::download(new ImportFormatLulusan, 'format-import-lulusan.xlsx');
-})->middleware('auth');
-Route::get('download/format-import', function () {
-    $file = public_path('importLulusan/format-import-lulusan.xlsx');
-    return Response::download($file);
-})->middleware('auth');
-Route::post('import/data-lulusan', [ExportLulusanController::class, 'importLulusan'])->middleware('auth');
+    // Export Route
+    Route::get('/export-all', [BiodataController::class, 'exportExcel']);
+    Route::post('admin/export-angkatan', [ExportLulusanController::class, 'exportAngkatan']);
+    Route::get('/admin/get-kelas/{id}', function ($id) {
+        $kelas = Kelas::where('tahun_lulus', $id)->get();
+        return response()->json($kelas);
+    });
+
+    // Import Route
+    Route::get('download/format-lulusan', function () {
+        return Excel::download(new ImportFormatLulusan, 'format-import-lulusan.xlsx');
+    });
+    Route::get('download/format-import', function () {
+        $file = public_path('importLulusan/format-import-lulusan.xlsx');
+        return Response::download($file);
+    });
+    Route::post('import/data-lulusan', [ExportLulusanController::class, 'importLulusan']);
+});

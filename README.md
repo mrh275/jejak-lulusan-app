@@ -69,9 +69,9 @@ Jadi saya membuat aplikasi ini dengan harapan dapat membantu Guru Bimbingan Kons
         - Datatable Kuliah
         - Datatable Pekerjaan
     - Pengaturan Akun
-        - Data User
+        - Edit akun
         - User Role
-        - User Level
+        - User Level (soon)
 
 ## Teknologi Aplikasi
 

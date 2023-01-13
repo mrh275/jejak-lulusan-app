@@ -40,7 +40,7 @@ Route::post('/login/auth', [LoginController::class, 'auth']);
 Route::post('/login/alumni', [LoginController::class, 'alumni']);
 Route::get('/logout', [LoginController::class, 'logout']);
 
-Route::middleware(['auth', 'alumni'])->group(function () {
+Route::middleware('alumni')->group(function () {
     // Alumni Route
     Route::get('/alumni', [AlumniController::class, 'dashboard']);
     Route::get('/alumni/{page}', [AlumniController::class, 'page']);

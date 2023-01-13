@@ -231,12 +231,6 @@
                                 <span class="dropdown-name">User Role</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="./user-level.html" id="user-level" class="dropdown-link">
-                                <i class='bx bxs-user-badge'></i>
-                                <span class="dropdown-name">User Level</span>
-                            </a>
-                        </li>
                     </ul>
                 </li>
             @endcan

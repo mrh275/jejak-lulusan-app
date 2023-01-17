@@ -83,5 +83,6 @@ Aplikasi dini dibangun menggunakan teknologi dibawah ini
 4. PHP (Laravel 8)
 5. Icon (Font awesome + Boxicons)
 6. [VanillaJS Datepicker](https://github.com/mymth/vanillajs-datepicker) (Thanks to @mymth, owner of this library)
+7. Laravel Excel (Import/Export Table)
 
 ## Made with :heart: by Muhamad Ramdani Hidayatullah

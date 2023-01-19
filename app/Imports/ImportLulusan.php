@@ -11,7 +11,7 @@ use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
 class ImportLulusan implements ToModel, WithHeadingRow
 {
-    
+
     public function model(array $row)
     {
         $data = [

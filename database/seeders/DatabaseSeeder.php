@@ -22,21 +22,21 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        // User::create([
-        //     'username'  => 'administrator',
-        //     'password'  => Hash::make('smanesta'),
-        //     'name'      => 'Administrator',
-        //     'email'     => 'admin@admin.com',
-        //     'is_admin'  => true,
-        // ]);
+        User::create([
+            'username'  => 'administrator',
+            'password'  => Hash::make('smanesta'),
+            'name'      => 'Administrator',
+            'email'     => 'admin@admin.com',
+            'is_admin'  => true,
+        ]);
 
-        // User::create([
-        //     'username'  => 'operator',
-        //     'password'  => Hash::make('operator'),
-        //     'name'      => 'Operator',
-        //     'email'     => 'operator@operator.com',
-        //     'is_admin'  => false,
-        // ]);
+        User::create([
+            'username'  => 'operator',
+            'password'  => Hash::make('operator'),
+            'name'      => 'Operator',
+            'email'     => 'operator@operator.com',
+            'is_admin'  => false,
+        ]);
 
         // Biodata::factory(50)->create();
         // Kuliah::factory(38)->create();

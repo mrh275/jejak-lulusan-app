@@ -15,7 +15,7 @@ class CreateBiodatasTable extends Migration
     {
         Schema::create('biodatas', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('nisn')->unique();
+            $table->string('nisn', 11)->unique();
             $table->bigInteger('nis')->unique();
             $table->string('nama');
             $table->string('jenis_kelamin');

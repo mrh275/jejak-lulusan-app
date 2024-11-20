@@ -15,7 +15,7 @@ class CreatePekerjaansTable extends Migration
     {
         Schema::create('pekerjaans', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('nisn_pekerjaan')->unique();
+            $table->string('nisn_pekerjaan', 11)->unique();
             $table->string('nama_perusahaan');
             $table->string('industri');
             $table->string('divisi');

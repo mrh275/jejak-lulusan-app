@@ -15,7 +15,7 @@ class CreateDataOrangTuasTable extends Migration
     {
         Schema::create('data_orang_tuas', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('nisn_orang_tua')->unique();
+            $table->string('nisn_orang_tua', 11)->unique();
             $table->string('nama_ayah');
             $table->string('tempat_lahir_ayah');
             $table->date('tanggal_lahir_ayah');

@@ -15,7 +15,7 @@ class CreateKuliahsTable extends Migration
     {
         Schema::create('kuliahs', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('nisn_kuliah')->unique();
+            $table->string('nisn_kuliah', 11)->unique();
             $table->string('kampus');
             $table->string('fakultas');
             $table->string('jurusan');

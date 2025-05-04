@@ -35,6 +35,7 @@ class DataOrangTuaController extends Controller
      */
     public function store(Request $request)
     {
+
         $rules = [
             'nama_ayah' => 'required',
             'tempat_lahir_ayah' => 'required',
@@ -99,7 +100,7 @@ class DataOrangTuaController extends Controller
     {
         $dataOrangTua = DataOrangTua::where('nisn_orang_tua', $id)->first();
         return response()->json([
-                'data' => $dataOrangTua,
+            'data' => $dataOrangTua,
         ]);
     }
 
@@ -112,6 +113,7 @@ class DataOrangTuaController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $rules = [
             'nama_ayah' => 'required',
             'tempat_lahir_ayah' => 'required',
@@ -145,8 +147,9 @@ class DataOrangTuaController extends Controller
         $validateData = $request->validate($rules, $errorMessage);
         $tgl_lahir_ayah = str_replace('/', '-', $request->tanggal_lahir_ayah);
         $tgl_lahir_ibu = str_replace('/', '-', $request->tanggal_lahir_ibu);
-        $validateBiodata['tanggal_lahir_ayah'] = date('Y-m-d', strtotime($tgl_lahir_ayah));
-        $validateBiodata['tanggal_lahir_ibu'] = date('Y-m-d', strtotime($tgl_lahir_ibu));
+        $validateData['tanggal_lahir_ayah'] = date('Y-m-d', strtotime($tgl_lahir_ayah));
+        $validateData['tanggal_lahir_ibu'] = date('Y-m-d', strtotime($tgl_lahir_ibu));
+
 
         DataOrangTua::where('nisn_orang_tua', $id)->update($validateData);
 
@@ -166,7 +169,7 @@ class DataOrangTuaController extends Controller
 
     public function updateAjax(Request $request, $nisn)
     {
-     
+
         $rules = [
             'nama_ayah' => 'required',
             'tempat_lahir_ayah' => 'required',
@@ -206,7 +209,7 @@ class DataOrangTuaController extends Controller
         DataOrangTua::where('nisn_orang_tua', $nisn)->update($validateData);
 
         return response()->json([
-                'success' => 'Data berhasil diubah!',
+            'success' => 'Data berhasil diubah!',
         ]);
     }
 }
